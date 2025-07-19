@@ -3,7 +3,7 @@ package se.tp21.karabiner.larks
 import sh.kau.karabiner.*
 import sh.kau.karabiner.ModifierKeyCode.*
 
-fun wrap(): ComplexModifications =
+fun larksWrap(): ComplexModifications =
     ComplexModifications(
         title = "larks wrap",
         rules = listOf(

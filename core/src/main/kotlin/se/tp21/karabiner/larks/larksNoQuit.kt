@@ -3,7 +3,7 @@ package se.tp21.karabiner.larks
 import sh.kau.karabiner.*
 import sh.kau.karabiner.ModifierKeyCode.*
 
-fun noQuit(): ComplexModifications =
+fun larksNoQuit(): ComplexModifications =
     ComplexModifications(
         title = "larks no quit",
         rules = listOf(

@@ -3,7 +3,7 @@ package se.tp21.karabiner.larks
 import sh.kau.karabiner.*
 import sh.kau.karabiner.ModifierKeyCode.*
 
-fun navigation(): ComplexModifications =
+fun larksNavigation(): ComplexModifications =
     ComplexModifications(
         title = "larks navigation",
         rules = listOf(
