@@ -3,7 +3,7 @@ package se.tp21.karabiner.larks
 import sh.kau.karabiner.*
 import sh.kau.karabiner.ModifierKeyCode.*
 
-fun commandControl(): ComplexModifications =
+fun larksCommandControl(): ComplexModifications =
     ComplexModifications(
         title = "larks command control",
         description = "for the terminal",
