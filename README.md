@@ -9,6 +9,4 @@ cp ./app/build/*.json ~/.config/karabiner/assets/complex_modifications/
 
 The rules will need to be loaded in the Karabiner elements UI:
 
-```"Preferences" -> "Complex Modifications" -> "Add rule" -> "snippets ..." -> "Enable all"```
-
-To make a change update `snippetRules.json`, then `./gradlew run --args="/path/to/snippetRules.json"`, then remove and add all rules.
+```"Preferences" -> "Complex Modifications" -> "Add rule" -> "larks ..." -> "Enable all"```
