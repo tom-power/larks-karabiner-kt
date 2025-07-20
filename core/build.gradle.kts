@@ -11,6 +11,7 @@ plugins {
     alias(libs.plugins.kotlin.serialization) // Apply the Kotlin serialization plugin
 
     `java-library`
+    idea
 }
 
 repositories {
@@ -22,7 +23,7 @@ dependencies {
     implementation(libs.bundles.pods4k)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.kotlin.reflect)
-    implementation("karabiner-kt:core:1.1.0")
+    implementation("karabiner-kt:core:1.1.2")
 
     testImplementation(libs.bundles.testing)
     testRuntimeOnly(libs.runtime.junit.platform)
