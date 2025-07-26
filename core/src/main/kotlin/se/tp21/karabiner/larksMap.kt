@@ -7,7 +7,7 @@ import se.tp21.karabiner.larks.larksNoQuit
 import se.tp21.karabiner.larks.larksWrap
 import sh.kau.karabiner.ComplexModifications
 
-fun larks(): Map<String, ComplexModifications> =
+val larksMap: Map<String, ComplexModifications> =
     mapOf(
         "macToPc" to larksMacToPc(),
         "navigation" to larksNavigation(),
