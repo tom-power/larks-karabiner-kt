@@ -38,6 +38,18 @@ fun larksNavigation(): ComplexModifications =
                     fromModifiers = FromModifiers(mandatory = listOf(Fn))
                     toKey = KeyCode.PageDown
                 }
-            }
+            },
+            karabinerRule {
+                description = "Control tab fn (fn+tab)"
+                mapping {
+                    fromKey = KeyCode.Tab
+                    fromModifiers = FromModifiers(
+                        mandatory = listOf(Fn),
+                        optional = listOf(Any)
+                    )
+                    toKey = KeyCode.Tab
+                    toModifiers = listOf(LeftControl)
+                }
+            },
         )
     )

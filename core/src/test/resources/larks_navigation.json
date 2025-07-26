@@ -84,6 +84,33 @@
                     ]
                 }
             ]
+        },
+        {
+            "description": "Control tab fn (fn+tab)",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "tab",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ],
+                            "mandatory": [
+                                "fn"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "tab",
+                            "modifiers": [
+                                "left_control"
+                            ]
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }
