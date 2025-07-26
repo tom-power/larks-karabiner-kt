@@ -3,9 +3,9 @@ package se.tp21.karabiner.larks
 import sh.kau.karabiner.*
 import sh.kau.karabiner.ModifierKeyCode.*
 
-fun larksCommandControl(): ComplexModifications =
+fun larksTerminal(): ComplexModifications =
     ComplexModifications(
-        title = "larks command control",
+        title = "larks terminal",
         description = "for the terminal",
         rules = rules()
     )

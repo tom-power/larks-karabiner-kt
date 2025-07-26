@@ -25,10 +25,10 @@ class LarksTest {
     @Suppress("unused")
     private fun larksKeys() =
         listOf(
-            "commandControl",
             "macToPc",
             "navigation",
             "noQuit",
+            "terminal",
             "wrap",
         )
 
