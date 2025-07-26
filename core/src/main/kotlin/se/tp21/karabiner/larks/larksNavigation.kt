@@ -38,22 +38,6 @@ fun larksNavigation(): ComplexModifications =
                     fromModifiers = FromModifiers(mandatory = listOf(Fn))
                     toKey = KeyCode.PageDown
                 }
-            },
-            karabinerRule {
-                description = "Page up control (left_control+up)"
-                mapping {
-                    fromKey = KeyCode.UpArrow
-                    fromModifiers = FromModifiers(mandatory = listOf(LeftControl))
-                    toKey = KeyCode.PageUp
-                }
-            },
-            karabinerRule {
-                description = "Page down control (left_control+down)"
-                mapping {
-                    fromKey = KeyCode.DownArrow
-                    fromModifiers = FromModifiers(mandatory = listOf(LeftControl))
-                    toKey = KeyCode.PageDown
-                }
             }
         )
     )

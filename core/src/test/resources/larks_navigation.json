@@ -84,48 +84,6 @@
                     ]
                 }
             ]
-        },
-        {
-            "description": "Page up control (left_control+up)",
-            "manipulators": [
-                {
-                    "type": "basic",
-                    "from": {
-                        "key_code": "up_arrow",
-                        "modifiers": {
-                            "mandatory": [
-                                "left_control"
-                            ]
-                        }
-                    },
-                    "to": [
-                        {
-                            "key_code": "page_up"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "description": "Page down control (left_control+down)",
-            "manipulators": [
-                {
-                    "type": "basic",
-                    "from": {
-                        "key_code": "down_arrow",
-                        "modifiers": {
-                            "mandatory": [
-                                "left_control"
-                            ]
-                        }
-                    },
-                    "to": [
-                        {
-                            "key_code": "page_down"
-                        }
-                    ]
-                }
-            ]
         }
     ]
 }
