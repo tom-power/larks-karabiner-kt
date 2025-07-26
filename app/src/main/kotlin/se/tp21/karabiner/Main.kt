@@ -4,7 +4,7 @@ import sh.kau.karabiner.json
 import java.io.File
 
 fun main() {
-    larks().forEach { (key, modifications) ->
+    larksMap.forEach { (key, modifications) ->
         try {
             val outputFile = File("build/larks_$key.json")
             val karabinerJson = json().encodeToString(modifications)

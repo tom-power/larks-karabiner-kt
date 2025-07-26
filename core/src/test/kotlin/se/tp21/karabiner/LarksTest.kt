@@ -2,36 +2,24 @@ package se.tp21.karabiner
 
 import org.junit.jupiter.api.TestInstance
 import org.junit.jupiter.params.ParameterizedTest
+import org.junit.jupiter.params.provider.Arguments
 import org.junit.jupiter.params.provider.MethodSource
+import se.tp21.resourcesapprover.ResourcesApprover
 import sh.kau.karabiner.ComplexModifications
 import sh.kau.karabiner.json
-import kotlin.test.assertEquals
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class LarksTest {
-
-    private val larks: Map<String, ComplexModifications> = larks()
-
     @ParameterizedTest
-    @MethodSource("larksKeys")
-    fun `snippets rules are correct`(key: String) {
-
-        assertEquals(
-            expected = javaClass.getResource("/larks_$key.json")!!.readText().trimAll(),
-            actual = json().encodeToString(larks[key]!!).trimAll(),
+    @MethodSource("larks")
+    fun `snippets rules are correct`(key: String, modifications: ComplexModifications) {
+        ResourcesApprover.assertApproved(
+            actual = json().encodeToString(modifications).trimStart().trimEnd().trimIndent(),
+            approved = "larks_$key.json",
         )
     }
 
     @Suppress("unused")
-    private fun larksKeys() =
-        listOf(
-            "macToPc",
-            "navigation",
-            "noQuit",
-            "terminal",
-            "wrap",
-        )
-
+    private fun larks() = larksMap.map { Arguments.of(it.key, it.value) }
 }
 
-private fun String.trimAll() = trimStart().trimEnd().trimIndent()
