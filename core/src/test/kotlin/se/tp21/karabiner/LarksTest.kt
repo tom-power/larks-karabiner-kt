@@ -14,7 +14,7 @@ class LarksTest {
     @MethodSource("larks")
     fun `snippets rules are correct`(key: String, modifications: ComplexModifications) {
         ResourcesApproval.assertApproved(
-            actual = json().encodeToString(modifications).trimStart().trimEnd().trimIndent(),
+            actual = json().encodeToString(modifications),
             approved = "larks_$key.json",
         )
     }
