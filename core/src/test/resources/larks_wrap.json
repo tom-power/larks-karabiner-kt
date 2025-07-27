@@ -2,56 +2,7 @@
     "title": "larks wrap",
     "rules": [
         {
-            "description": "wrap with \" (left_shift+left_command+quote to clipboard wrapped with \")",
-            "manipulators": [
-                {
-                    "type": "basic",
-                    "from": {
-                        "key_code": "quote",
-                        "modifiers": {
-                            "mandatory": [
-                                "left_shift",
-                                "left_command"
-                            ]
-                        }
-                    },
-                    "to": [
-                        {
-                            "key_code": "x",
-                            "modifiers": [
-                                "left_command"
-                            ]
-                        },
-                        {
-                            "shell_command": "pbpaste | pbcopy -pboard ruler"
-                        },
-                        {
-                            "key_code": "quote",
-                            "modifiers": [
-                                "left_shift"
-                            ]
-                        },
-                        {
-                            "shell_command": "pbpaste -pboard ruler"
-                        },
-                        {
-                            "key_code": "v",
-                            "modifiers": [
-                                "left_command"
-                            ]
-                        },
-                        {
-                            "key_code": "quote",
-                            "modifiers": [
-                                "left_shift"
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "description": "wrap with \" 2 (left_shift+right_shift+2 to clipboard wrapped with \")",
+            "description": "wrap with \" (left_shift+right_shift+2 to clipboard wrapped with \")",
             "manipulators": [
                 {
                     "type": "basic",
@@ -100,15 +51,16 @@
             ]
         },
         {
-            "description": "wrap with ' (left_command+quote to clipboard wrapped with ')",
+            "description": "wrap with () (left_shift+right_shift+9 to clipboard wrapped with ())",
             "manipulators": [
                 {
                     "type": "basic",
                     "from": {
-                        "key_code": "quote",
+                        "key_code": "9",
                         "modifiers": {
                             "mandatory": [
-                                "left_command"
+                                "left_shift",
+                                "right_shift"
                             ]
                         }
                     },
@@ -123,7 +75,10 @@
                             "shell_command": "pbpaste | pbcopy -pboard ruler"
                         },
                         {
-                            "key_code": "quote"
+                            "key_code": "9",
+                            "modifiers": [
+                                "left_shift"
+                            ]
                         },
                         {
                             "shell_command": "pbpaste -pboard ruler"
@@ -135,7 +90,10 @@
                             ]
                         },
                         {
-                            "key_code": "quote"
+                            "key_code": "0",
+                            "modifiers": [
+                                "left_shift"
+                            ]
                         }
                     ]
                 }
