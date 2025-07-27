@@ -8,23 +8,7 @@ fun larksWrap(): ComplexModifications =
         title = "larks wrap",
         rules = listOf(
             karabinerRule(
-                description = "wrap with \" (left_shift+left_command+quote to clipboard wrapped with \")",
-                manipulators = listOf(
-                    Manipulator(
-                        from = From(KeyCode.Quote, modifiers = FromModifiers(mandatory = listOf(LeftShift, LeftCommand))),
-                        to = listOf(
-                            To(keyCode = KeyCode.X, modifiers = listOf(LeftCommand)),
-                            To(shellCommand = "pbpaste | pbcopy -pboard ruler"),
-                            To(keyCode = KeyCode.Quote, modifiers = listOf(LeftShift)),
-                            To(shellCommand = "pbpaste -pboard ruler"),
-                            To(keyCode = KeyCode.V, modifiers = listOf(LeftCommand)),
-                            To(keyCode = KeyCode.Quote, modifiers = listOf(LeftShift))
-                        )
-                    )
-                ).toTypedArray()
-            ),
-            karabinerRule(
-                description = "wrap with \" 2 (left_shift+right_shift+2 to clipboard wrapped with \")",
+                description = "wrap with \" (left_shift+right_shift+2 to clipboard wrapped with \")",
                 manipulators = listOf(
                     Manipulator(
                         from = From(KeyCode.Num2, modifiers = FromModifiers(mandatory = listOf(LeftShift, RightShift))),
@@ -40,17 +24,17 @@ fun larksWrap(): ComplexModifications =
                 ).toTypedArray()
             ),
             karabinerRule(
-                description = "wrap with ' (left_command+quote to clipboard wrapped with ')",
+                description = "wrap with () (left_shift+right_shift+9 to clipboard wrapped with ())",
                 manipulators = listOf(
                     Manipulator(
-                        from = From(KeyCode.Quote, modifiers = FromModifiers(mandatory = listOf(LeftCommand))),
+                        from = From(KeyCode.Num9, modifiers = FromModifiers(mandatory = listOf(LeftShift, RightShift))),
                         to = listOf(
                             To(keyCode = KeyCode.X, modifiers = listOf(LeftCommand)),
                             To(shellCommand = "pbpaste | pbcopy -pboard ruler"),
-                            To(keyCode = KeyCode.Quote),
+                            To(keyCode = KeyCode.Num9, modifiers = listOf(LeftShift)),
                             To(shellCommand = "pbpaste -pboard ruler"),
                             To(keyCode = KeyCode.V, modifiers = listOf(LeftCommand)),
-                            To(keyCode = KeyCode.Quote)
+                            To(keyCode = KeyCode.Num0, modifiers = listOf(LeftShift))
                         )
                     )
                 ).toTypedArray()
