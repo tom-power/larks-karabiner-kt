@@ -20,7 +20,7 @@ sourceControl {
     gitRepository(URI("https://github.com/tom-power/karabiner-kt")) {
         producesModule("karabiner-kt:core")
     }
-    gitRepository(URI("https://github.com/tom-power/resources-approver")) {
+    gitRepository(URI("https://github.com/tom-power/resources-approval")) {
         producesModule("resources-approve:core")
     }
 }
