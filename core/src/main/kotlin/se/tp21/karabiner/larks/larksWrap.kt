@@ -21,6 +21,12 @@ fun larksWrap(): ComplexModifications =
                 toOpen = To(keyCode = KeyCode.Num9, modifiers = listOf(LeftShift)),
                 toClose = To(keyCode = KeyCode.Num0, modifiers = listOf(LeftShift)),
             ),
+            wrapRule(
+                description = "wrap with ` (left_shift+right_shift+` to clipboard wrapped with `)",
+                fromKeyCode = KeyCode.GraveAccentAndTilde,
+                toOpen = To(keyCode = KeyCode.GraveAccentAndTilde, modifiers = listOf(LeftShift)),
+                toClose = To(keyCode = KeyCode.GraveAccentAndTilde, modifiers = listOf(LeftShift)),
+            ),
         )
     )
 
