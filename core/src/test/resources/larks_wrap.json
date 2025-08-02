@@ -124,10 +124,7 @@
                             "shell_command": "pbpaste | pbcopy -pboard ruler"
                         },
                         {
-                            "key_code": "grave_accent_and_tilde",
-                            "modifiers": [
-                                "left_shift"
-                            ]
+                            "key_code": "grave_accent_and_tilde"
                         },
                         {
                             "shell_command": "pbpaste -pboard ruler"
@@ -139,10 +136,7 @@
                             ]
                         },
                         {
-                            "key_code": "grave_accent_and_tilde",
-                            "modifiers": [
-                                "left_shift"
-                            ]
+                            "key_code": "grave_accent_and_tilde"
                         }
                     ]
                 }
