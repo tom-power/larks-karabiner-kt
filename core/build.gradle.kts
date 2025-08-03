@@ -11,7 +11,6 @@ plugins {
     alias(libs.plugins.kotlin.serialization) // Apply the Kotlin serialization plugin
 
     `java-library`
-    idea
 }
 
 repositories {
@@ -25,12 +24,10 @@ dependencies {
     implementation(libs.kotlin.reflect)
     implementation("karabiner-kt:core:1.1.2")
 
-    testImplementation(libs.bundles.testing)
-    testRuntimeOnly(libs.runtime.junit.platform)
-
     testImplementation("org.junit.jupiter:junit-jupiter-params:5.10.2")
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.10.2")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.10.2")
+    testImplementation(kotlin("test"))
     testImplementation("resources-approval:core:0.1")
 }
 

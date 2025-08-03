@@ -1,5 +1,6 @@
 package se.tp21.karabiner
 
+import se.tp21.karabiner.larks.larksFirefox
 import se.tp21.karabiner.larks.larksTerminal
 import se.tp21.karabiner.larks.larksMacToPc
 import se.tp21.karabiner.larks.larksNavigation
@@ -9,6 +10,7 @@ import sh.kau.karabiner.ComplexModifications
 
 val larksMap: Map<String, ComplexModifications> =
     mapOf(
+        "firefox" to larksFirefox(),
         "macToPc" to larksMacToPc(),
         "navigation" to larksNavigation(),
         "noQuit" to larksNoQuit(),

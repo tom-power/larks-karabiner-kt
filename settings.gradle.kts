@@ -16,11 +16,13 @@ rootProject.name = "larks-karabiner-kt"
 include("core")
 include("app")
 
+includeBuild("../karabiner-kt")
+includeBuild("../resources-approval")
 sourceControl {
-    gitRepository(URI("https://github.com/tom-power/karabiner-kt")) {
-        producesModule("karabiner-kt:core")
-    }
-    gitRepository(URI("https://github.com/tom-power/resources-approval")) {
-        producesModule("resources-approve:core")
-    }
+//    gitRepository(URI("https://github.com/tom-power/karabiner-kt")) {
+//        producesModule("karabiner-kt:core")
+//    }
+//    gitRepository(URI("https://github.com/tom-power/resources-approval")) {
+//        producesModule("resources-approve:core")
+//    }
 }
