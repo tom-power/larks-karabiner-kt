@@ -36,12 +36,12 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = "se.tp21.larkskarabiner.MainKt"
+    mainClass = "se.tp21.larks.karabiner.MainKt"
 }
 
 tasks.register<JavaExec>("runMainKt") {
     group = "build"
-    mainClass.set("se.tp21.larkskarabiner.MainKt")
+    mainClass.set("se.tp21.larks.karabiner.MainKt")
     classpath = sourceSets["main"].runtimeClasspath
 }
 
