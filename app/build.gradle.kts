@@ -23,7 +23,7 @@ dependencies {
     implementation(libs.bundles.pods4k)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.kotlin.reflect)
-    implementation("karabiner-kt:core:1.1.0")
+    implementation("karabiner-kt:core:0.2")
     implementation(project(":core"))
 
 }
@@ -36,12 +36,12 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = "se.tp21.karabiner.MainKt"
+    mainClass = "se.tp21.larkskarabiner.MainKt"
 }
 
 tasks.register<JavaExec>("runMainKt") {
     group = "build"
-    mainClass.set("se.tp21.karabiner.MainKt")
+    mainClass.set("se.tp21.larkskarabiner.MainKt")
     classpath = sourceSets["main"].runtimeClasspath
 }
 

@@ -1,10 +1,10 @@
-package se.tp21.karabiner
+package se.tp21.larkskarabiner
 
-import se.tp21.karabiner.larks.larksTerminal
-import se.tp21.karabiner.larks.larksMacToPc
-import se.tp21.karabiner.larks.larksNavigation
-import se.tp21.karabiner.larks.larksNoQuit
-import se.tp21.karabiner.larks.larksWrap
+import se.tp21.larkskarabiner.larks.larksTerminal
+import se.tp21.larkskarabiner.larks.larksMacToPc
+import se.tp21.larkskarabiner.larks.larksNavigation
+import se.tp21.larkskarabiner.larks.larksNoQuit
+import se.tp21.larkskarabiner.larks.larksWrap
 import sh.kau.karabiner.ComplexModifications
 
 val larksMap: Map<String, ComplexModifications> =
