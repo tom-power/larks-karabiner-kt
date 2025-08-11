@@ -1,4 +1,4 @@
-package se.tp21.larkskarabiner
+package se.tp21.karabiner.larks
 
 import org.junit.jupiter.api.TestInstance
 import org.junit.jupiter.params.ParameterizedTest
