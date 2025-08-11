@@ -1,4 +1,4 @@
-package se.tp21.karabiner
+package se.tp21.larkskarabiner
 
 import sh.kau.karabiner.json
 import java.io.File
