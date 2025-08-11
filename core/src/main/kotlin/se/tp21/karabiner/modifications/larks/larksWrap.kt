@@ -1,4 +1,4 @@
-package se.tp21.karabiner.larks.larks
+package se.tp21.karabiner.modifications.larks
 
 import sh.kau.karabiner.*
 import sh.kau.karabiner.ModifierKeyCode.*
