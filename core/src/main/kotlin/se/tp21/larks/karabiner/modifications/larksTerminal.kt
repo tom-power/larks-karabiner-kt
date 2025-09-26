@@ -13,11 +13,11 @@ fun larksTerminal(): ComplexModifications =
 private fun rules() =
     listOf(
         karabinerRule {
-            description = "Control b (left_command+b to right_control+b)"
+            description = "Control b (left_command+b to right_control+w)"
             mapping {
                 fromKey = KeyCode.B
                 fromModifiers = FromModifiers(mandatory = listOf(LeftCommand))
-                toKey = KeyCode.B
+                toKey = KeyCode.W
                 toModifiers = listOf(RightControl)
             }
         },

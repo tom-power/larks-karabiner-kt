@@ -5,6 +5,7 @@ import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments
 import org.junit.jupiter.params.provider.MethodSource
 import se.tp21.resourcesapproval.ResourcesApproval
+import se.tp21.resourcesapproval.WriteTo
 import sh.kau.karabiner.ComplexModifications
 import sh.kau.karabiner.json
 
@@ -16,6 +17,7 @@ class LarksTest {
         ResourcesApproval.assertApproved(
             actual = json().encodeToString(modifications),
             approved = "larks_$key.json",
+            writeTo = WriteTo.Approved
         )
     }
 
