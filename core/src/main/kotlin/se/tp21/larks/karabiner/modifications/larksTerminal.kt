@@ -38,5 +38,14 @@ private fun rules() =
                 toKey = KeyCode.L
                 toModifiers = listOf(RightControl)
             }
+        },
+        karabinerRule {
+            description = "Control k (left_command+k to right_control+k)"
+            mapping {
+                fromKey = KeyCode.K
+                fromModifiers = FromModifiers(mandatory = listOf(LeftCommand))
+                toKey = KeyCode.K
+                toModifiers = listOf(RightControl)
+            }
         }
     )
