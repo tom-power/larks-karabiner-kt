@@ -1,0 +1,47 @@
+{
+    "title": "larks clicking",
+    "rules": [
+        {
+            "description": "left click (q+left_command to left click)",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "q",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_command"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "pointing_button": "button1"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "middle click (v+fn to middle click)",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "v",
+                        "modifiers": {
+                            "mandatory": [
+                                "fn"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "pointing_button": "button3"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

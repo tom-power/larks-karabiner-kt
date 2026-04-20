@@ -7,7 +7,7 @@ val larksMap: Map<String, ComplexModifications> =
     mapOf(
         "macToPc" to larksMacToPc(),
         "navigation" to larksNavigation(),
-        "noQuit" to larksNoQuit(),
+        "clicking" to larksClicking(),
         "terminal" to larksTerminal(),
         "wrap" to larksWrap(),
         "gaming" to larksGaming()
