@@ -1,5 +1,6 @@
 package se.tp21.larks.karabiner
 
+import se.tp21.larks.karabiner.modifications.larksGaming
 import se.tp21.larks.karabiner.modifications.larksTerminal
 import se.tp21.larks.karabiner.modifications.larksMacToPc
 import se.tp21.larks.karabiner.modifications.larksNavigation
@@ -14,4 +15,5 @@ val larksMap: Map<String, ComplexModifications> =
         "noQuit" to larksNoQuit(),
         "terminal" to larksTerminal(),
         "wrap" to larksWrap(),
+        "gaming" to larksGaming()
     )
