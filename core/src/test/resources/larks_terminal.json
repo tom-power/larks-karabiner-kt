@@ -97,6 +97,246 @@
                     ]
                 }
             ]
+        },
+        {
+            "description": "Control q (right_command+q to right_control+q)",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "q",
+                        "modifiers": {
+                            "mandatory": [
+                                "right_command"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "q",
+                            "modifiers": [
+                                "left_control"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Control e (right_command+e to right_control+e)",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "e",
+                        "modifiers": {
+                            "mandatory": [
+                                "right_command"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "e",
+                            "modifiers": [
+                                "left_control"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Control r (right_command+r to right_control+r)",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "r",
+                        "modifiers": {
+                            "mandatory": [
+                                "right_command"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "r",
+                            "modifiers": [
+                                "left_control"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Control a (right_command+a to right_control+a)",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "a",
+                        "modifiers": {
+                            "mandatory": [
+                                "right_command"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "a",
+                            "modifiers": [
+                                "left_control"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Control s (right_command+s to right_control+s)",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "s",
+                        "modifiers": {
+                            "mandatory": [
+                                "right_command"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "s",
+                            "modifiers": [
+                                "left_control"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Control d (right_command+d to right_control+d)",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "d",
+                        "modifiers": {
+                            "mandatory": [
+                                "right_command"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "d",
+                            "modifiers": [
+                                "left_control"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Control z (right_command+z to right_control+z)",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "z",
+                        "modifiers": {
+                            "mandatory": [
+                                "right_command"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "z",
+                            "modifiers": [
+                                "left_control"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Control x (right_command+x to right_control+x)",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "x",
+                        "modifiers": {
+                            "mandatory": [
+                                "right_command"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "x",
+                            "modifiers": [
+                                "left_control"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Control c (right_command+c to right_control+c)",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "c",
+                        "modifiers": {
+                            "mandatory": [
+                                "right_command"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "c",
+                            "modifiers": [
+                                "left_control"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Control v (right_command+v to right_control+v)",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "v",
+                        "modifiers": {
+                            "mandatory": [
+                                "right_command"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "v",
+                            "modifiers": [
+                                "left_control"
+                            ]
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }

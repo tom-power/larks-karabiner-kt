@@ -11,28 +11,45 @@ fun larksTerminal(): ComplexModifications =
     )
 
 private fun rules(): List<KarabinerRule> =
-    leftCommandKeyMappings().map { keyMapping ->
-        toCommandToControlRuleOn(
-            keyMapping = keyMapping,
-            commandKey = LeftCommand
-        )
-    }
+    leftCommandToControl() + rightCommandToControl()
 
 typealias KeyMapping = Pair<KeyCode, KeyCode>
+
+private fun leftCommandToControl(): List<KarabinerRule> =
+    leftCommandKeyMappings().map {
+        it.toCommandToControlRuleOn(LeftCommand)
+    }
 
 private fun leftCommandKeyMappings(): List<KeyMapping> =
     listOf(
         KeyCode.B to KeyCode.W,
-        KeyCode.U to KeyCode.U,
-        KeyCode.L to KeyCode.L,
-        KeyCode.K to KeyCode.K,
-    )
+    ) + listOf(
+        KeyCode.U,
+        KeyCode.L,
+        KeyCode.K,
+    ).map { it to it }
 
-private fun toCommandToControlRuleOn(
-    keyMapping: KeyMapping,
-    commandKey: ModifierKeyCode
-): KarabinerRule {
-    val (from, to) = keyMapping
+private fun rightCommandToControl(): List<KarabinerRule> =
+    rightCommandKeyMappings().map {
+        it.toCommandToControlRuleOn(RightCommand)
+    }
+
+private fun rightCommandKeyMappings(): List<KeyMapping> =
+    listOf(
+        KeyCode.Q,
+        KeyCode.E,
+        KeyCode.R,
+        KeyCode.A,
+        KeyCode.S,
+        KeyCode.D,
+        KeyCode.Z,
+        KeyCode.X,
+        KeyCode.C,
+        KeyCode.V,
+    ).map { it to it }
+
+private fun KeyMapping.toCommandToControlRuleOn(commandKey: ModifierKeyCode): KarabinerRule {
+    val (from, to) = this
     return karabinerRule {
         val commandKeyName = commandKey.name.camelToSnakeCase().lowercase()
         val toName = to.name.lowercase()
