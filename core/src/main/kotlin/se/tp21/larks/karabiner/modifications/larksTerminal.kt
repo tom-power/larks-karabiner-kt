@@ -27,36 +27,45 @@ fun larksTerminal(): ComplexModifications =
     )
 
 private fun rules(): List<KarabinerRule> =
-    (keyCodesDifferent() + keyCodesSame())
-        .map { (from, to) ->
-            commandToControlRule(from, to)
-        }
-
-private fun commandToControlRule(from: KeyCode, to: KeyCode): KarabinerRule =
-    karabinerRule {
-        description =
-            "Control ${to.name.lowercase()} (left_command+${from.name.lowercase()} to right_control+${to.name.lowercase()})"
-        mapping {
-            fromKey = from
-            fromModifiers = FromModifiers(mandatory = listOf(LeftCommand))
-            toKey = to
-            toModifiers = listOf(RightControl)
-        }
+    leftCommandKeyMappings().map { keyMapping ->
+        toCommandToControlRuleOn(
+            keyMapping = keyMapping,
+            commandKey = LeftCommand
+        )
     }
 
 typealias KeyMapping = Pair<KeyCode, KeyCode>
 
-private fun keyCodesDifferent(): List<KeyMapping> =
+private fun leftCommandKeyMappings(): List<KeyMapping> =
     listOf(
-        KeyCode.B to KeyCode.W
+        KeyCode.B to KeyCode.W,
+        KeyCode.U to KeyCode.U,
+        KeyCode.L to KeyCode.L,
+        KeyCode.K to KeyCode.K,
     )
 
-private fun keyCodesSame(): List<KeyMapping> =
-    listOf(
-        KeyCode.U,
-        KeyCode.L,
-        KeyCode.K,
-    )
-        .map { it to it }
+private fun toCommandToControlRuleOn(
+    keyMapping: KeyMapping,
+    commandKey: ModifierKeyCode
+): KarabinerRule {
+    val (from, to) = keyMapping
+    return karabinerRule {
+        val commandKeyName = commandKey.name.camelToSnakeCase().lowercase()
+        val toName = to.name.lowercase()
+        val fromName = from.name.lowercase()
+        description =
+            "Control $toName ($commandKeyName+$fromName to right_control+$toName)"
+        mapping {
+            fromKey = from
+            fromModifiers = FromModifiers(mandatory = listOf(commandKey))
+            toKey = to
+            toModifiers = listOf(RightControl)
+        }
+    }
+}
 
+private fun String.camelToSnakeCase(): String {
+    val pattern = "(?<=.)[A-Z]".toRegex()
+    return this.replace(pattern, "_$0").lowercase()
+}
 
