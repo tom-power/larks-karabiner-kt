@@ -3,22 +3,6 @@ package se.tp21.larks.karabiner.modifications
 import sh.kau.karabiner.*
 import sh.kau.karabiner.ModifierKeyCode.*
 
-fun larksTerminalSimple(): List<SimpleModification> =
-    listOf(
-        SimpleModification(
-            from =
-                SimpleModificationKey(
-                    keyCode = RightCommand,
-                ),
-            to =
-                listOf(
-                    SimpleModificationValue(
-                        keyCode = LeftControl,
-                    )
-                )
-        )
-    )
-
 fun larksTerminal(): ComplexModifications =
     ComplexModifications(
         title = "larks terminal",
