@@ -3,7 +3,7 @@
     "description": "for the terminal",
     "rules": [
         {
-            "description": "Control b (left_command+b to right_control+w)",
+            "description": "Control w (left_command+b to right_control+w)",
             "manipulators": [
                 {
                     "type": "basic",
