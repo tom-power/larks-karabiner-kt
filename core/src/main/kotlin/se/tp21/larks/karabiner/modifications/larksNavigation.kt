@@ -1,71 +1,52 @@
 package se.tp21.larks.karabiner.modifications
 
 import sh.kau.karabiner.*
+import sh.kau.karabiner.KeyCode
 import sh.kau.karabiner.ModifierKeyCode.*
 
 fun larksNavigation(): ComplexModifications =
     ComplexModifications(
         title = "larks navigation",
-        rules = listOf(
-            karabinerRule {
-                description = "Page up (left_control+backspace)"
-                mapping {
-                    fromKey = KeyCode.DeleteOrBackspace
-                    fromModifiers = FromModifiers(mandatory = listOf(LeftControl))
-                    toKey = KeyCode.PageUp
-                }
-            },
-            karabinerRule {
-                description = "Page down (left_control+enter)"
-                mapping {
-                    fromKey = KeyCode.ReturnOrEnter
-                    fromModifiers = FromModifiers(mandatory = listOf(LeftControl))
-                    toKey = KeyCode.PageDown
-                }
-            },
-            karabinerRule {
-                description = "Page up fn (fn+backspace)"
-                mapping {
-                    fromKey = KeyCode.DeleteOrBackspace
-                    fromModifiers = FromModifiers(mandatory = listOf(Fn))
-                    toKey = KeyCode.PageUp
-                }
-            },
-            karabinerRule {
-                description = "Page up control arrow (left_control+up)"
-                mapping {
-                    fromKey = KeyCode.UpArrow
-                    fromModifiers = FromModifiers(mandatory = listOf(LeftControl))
-                    toKey = KeyCode.PageUp
-                }
-            },
-            karabinerRule {
-                description = "Page down control arrow (left_control+down)"
-                mapping {
-                    fromKey = KeyCode.DownArrow
-                    fromModifiers = FromModifiers(mandatory = listOf(LeftControl))
-                    toKey = KeyCode.PageDown
-                }
-            },
-            karabinerRule {
-                description = "Page down fn (fn+backspace)"
-                mapping {
-                    fromKey = KeyCode.ReturnOrEnter
-                    fromModifiers = FromModifiers(mandatory = listOf(Fn))
-                    toKey = KeyCode.PageDown
-                }
-            },
-            karabinerRule {
-                description = "Control tab fn (fn+tab)"
-                mapping {
-                    fromKey = KeyCode.Tab
-                    fromModifiers = FromModifiers(
-                        mandatory = listOf(Fn),
-                        optional = listOf(Any)
-                    )
-                    toKey = KeyCode.Tab
-                    toModifiers = listOf(LeftControl)
-                }
-            }
-        )
+        rules = pageUps() + pageDowns()
     )
+
+private fun pageUps() =
+    listOf(
+        KeyCode.DeleteOrBackspace,
+        KeyCode.UpArrow
+    ).pageRulesFor(KeyCode.PageUp)
+
+private fun pageDowns() =
+    listOf(
+        KeyCode.ReturnOrEnter,
+        KeyCode.DownArrow,
+    ).pageRulesFor(KeyCode.PageDown)
+
+private fun List<KeyCode>.pageRulesFor(to: KeyCode ) =
+    this.combineWith(modifiers())
+        .map { (from, fromModifier) ->
+            pageRule(from, fromModifier, to)
+        }
+
+private fun modifiers(): List<ModifierKeyCode> = listOf(LeftControl, Fn)
+
+private fun pageRule(
+    from: KeyCode,
+    fromModifier: ModifierKeyCode,
+    to: KeyCode,
+): KarabinerRule {
+    check(to in listOf(KeyCode.PageUp, KeyCode.PageDown))
+
+    val fromModifierName = fromModifier.name.camelToSnakeCase()
+    val fromName = from.name.camelToSnakeCase()
+
+    return karabinerRule {
+        description =
+            "${to.name.camelToTitleCaseWithSpace()} ($fromModifierName+$fromName)"
+        mapping {
+            fromKey = from
+            fromModifiers = FromModifiers(mandatory = listOf(fromModifier))
+            toKey = to
+        }
+    }
+}

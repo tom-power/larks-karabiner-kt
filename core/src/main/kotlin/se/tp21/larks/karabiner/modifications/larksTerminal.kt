@@ -13,8 +13,6 @@ fun larksTerminal(): ComplexModifications =
 private fun rules(): List<KarabinerRule> =
     leftCommandToControl() + rightCommandToControl()
 
-typealias KeyMapping = Pair<KeyCode, KeyCode>
-
 private fun leftCommandToControl(): List<KarabinerRule> =
     leftCommandKeyMappings().map {
         it.toCommandToControlRuleOn(LeftCommand)
@@ -63,10 +61,5 @@ private fun KeyMapping.toCommandToControlRuleOn(commandKey: ModifierKeyCode): Ka
             toModifiers = listOf(LeftControl)
         }
     }
-}
-
-private fun String.camelToSnakeCase(): String {
-    val pattern = "(?<=.)[A-Z]".toRegex()
-    return this.replace(pattern, "_$0").lowercase()
 }
 
