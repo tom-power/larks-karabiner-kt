@@ -59,7 +59,7 @@ private fun toCommandToControlRuleOn(
             fromKey = from
             fromModifiers = FromModifiers(mandatory = listOf(commandKey))
             toKey = to
-            toModifiers = listOf(RightControl)
+            toModifiers = listOf(LeftControl)
         }
     }
 }

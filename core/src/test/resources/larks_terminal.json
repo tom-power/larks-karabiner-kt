@@ -19,7 +19,7 @@
                         {
                             "key_code": "w",
                             "modifiers": [
-                                "right_control"
+                                "left_control"
                             ]
                         }
                     ]
@@ -43,7 +43,7 @@
                         {
                             "key_code": "u",
                             "modifiers": [
-                                "right_control"
+                                "left_control"
                             ]
                         }
                     ]
@@ -67,7 +67,7 @@
                         {
                             "key_code": "l",
                             "modifiers": [
-                                "right_control"
+                                "left_control"
                             ]
                         }
                     ]
@@ -91,7 +91,7 @@
                         {
                             "key_code": "k",
                             "modifiers": [
-                                "right_control"
+                                "left_control"
                             ]
                         }
                     ]
