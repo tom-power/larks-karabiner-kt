@@ -9,24 +9,20 @@ fun larksMacToPc(): ComplexModifications =
         rules = rules()
     )
 
-private fun rules() =
+private fun rules(): List<KarabinerRule> =
     listOf(
-        karabinerRule {
-            description = "@ (left_shift + ')"
-            mapping {
-                fromKey = KeyCode.Quote
-                fromModifiers = FromModifiers(mandatory = listOf(LeftShift))
-                toKey = KeyCode.Num2
-                toModifiers = listOf(LeftShift)
-            }
+        karabinerRuleSimple {
+            description = "@ (quote + left_shift)"
+            fromKey = KeyCode.Quote
+            fromModifier = LeftShift
+            toKey = KeyCode.Num2
+            toModifier = LeftShift
         },
-        karabinerRule {
-            description = "\" (right_shift + 2)"
-            mapping {
-                fromKey = KeyCode.Num2
-                fromModifiers = FromModifiers(mandatory = listOf(RightShift))
-                toKey = KeyCode.Quote
-                toModifiers = listOf(LeftShift)
-            }
-        },
+        karabinerRuleSimple {
+            description = "\" (2 + right_shift)"
+            fromKey = KeyCode.Num2
+            fromModifier = RightShift
+            toKey = KeyCode.Quote
+            toModifier = LeftShift
+        }
     )

@@ -2,7 +2,7 @@
     "title": "larks mac to pc",
     "rules": [
         {
-            "description": "@ (left_shift + ')",
+            "description": "@ (quote + left_shift)",
             "manipulators": [
                 {
                     "type": "basic",
@@ -26,7 +26,7 @@
             ]
         },
         {
-            "description": "\" (right_shift + 2)",
+            "description": "\" (2 + right_shift)",
             "manipulators": [
                 {
                     "type": "basic",

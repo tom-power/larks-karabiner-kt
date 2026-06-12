@@ -25,8 +25,8 @@ fun larksGaming(): ComplexModifications =
             karabinerRule {
                 description = "left click (q+left_control+moonlight to left click)"
                 mapping {
-                    from = From(KeyCode.Q, modifiers = FromModifiers(mandatory = listOf(LeftControl)))
-                    to = listOf(
+                    this.from = From(KeyCode.Q, modifiers = FromModifiers(mandatory = listOf(LeftControl)))
+                    this.to = listOf(
                         To(pointingButton = "button1")
                     )
                     conditions = mutableListOf(

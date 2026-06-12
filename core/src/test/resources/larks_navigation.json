@@ -2,7 +2,7 @@
     "title": "larks navigation",
     "rules": [
         {
-            "description": "Page up (left_control+delete_or_backspace)",
+            "description": "page_up + null (delete_or_backspace + left_control)",
             "manipulators": [
                 {
                     "type": "basic",
@@ -23,7 +23,7 @@
             ]
         },
         {
-            "description": "Page up (fn+delete_or_backspace)",
+            "description": "page_up + null (delete_or_backspace + fn)",
             "manipulators": [
                 {
                     "type": "basic",
@@ -44,7 +44,7 @@
             ]
         },
         {
-            "description": "Page up (left_control+up_arrow)",
+            "description": "page_up + null (up_arrow + left_control)",
             "manipulators": [
                 {
                     "type": "basic",
@@ -65,7 +65,7 @@
             ]
         },
         {
-            "description": "Page up (fn+up_arrow)",
+            "description": "page_up + null (up_arrow + fn)",
             "manipulators": [
                 {
                     "type": "basic",
@@ -86,7 +86,7 @@
             ]
         },
         {
-            "description": "Page down (left_control+return_or_enter)",
+            "description": "page_down + null (return_or_enter + left_control)",
             "manipulators": [
                 {
                     "type": "basic",
@@ -107,7 +107,7 @@
             ]
         },
         {
-            "description": "Page down (fn+return_or_enter)",
+            "description": "page_down + null (return_or_enter + fn)",
             "manipulators": [
                 {
                     "type": "basic",
@@ -128,7 +128,7 @@
             ]
         },
         {
-            "description": "Page down (left_control+down_arrow)",
+            "description": "page_down + null (down_arrow + left_control)",
             "manipulators": [
                 {
                     "type": "basic",
@@ -149,7 +149,7 @@
             ]
         },
         {
-            "description": "Page down (fn+down_arrow)",
+            "description": "page_down + null (down_arrow + fn)",
             "manipulators": [
                 {
                     "type": "basic",

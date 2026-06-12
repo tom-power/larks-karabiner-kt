@@ -46,20 +46,13 @@ private fun rightCommandKeyMappings(): List<KeyMapping> =
         KeyCode.V,
     ).map { it to it }
 
-private fun KeyMapping.toCommandToControlRuleOn(commandKey: ModifierKeyCode): KarabinerRule {
-    val (from, to) = this
-    return karabinerRule {
-        val commandKeyName = commandKey.name.camelToSnakeCase().lowercase()
-        val toName = to.name.lowercase()
-        val fromName = from.name.lowercase()
-        description =
-            "Control $toName ($commandKeyName+$fromName to right_control+$toName)"
-        mapping {
-            fromKey = from
-            fromModifiers = FromModifiers(mandatory = listOf(commandKey))
-            toKey = to
-            toModifiers = listOf(LeftControl)
+private fun KeyMapping.toCommandToControlRuleOn(commandKey: ModifierKeyCode): KarabinerRule =
+    this.let { (fromKey, toKey) ->
+        karabinerRuleSimple {
+            this.fromKey = fromKey
+            fromModifier = commandKey
+            this.toKey = toKey
         }
     }
-}
+
 

@@ -14,39 +14,30 @@ private fun pageUps() =
     listOf(
         KeyCode.DeleteOrBackspace,
         KeyCode.UpArrow
-    ).pageRulesFor(KeyCode.PageUp)
+    )
+        .zipAll(modifiers())
+        .pageRulesFor(KeyCode.PageUp)
 
 private fun pageDowns() =
     listOf(
         KeyCode.ReturnOrEnter,
         KeyCode.DownArrow,
-    ).pageRulesFor(KeyCode.PageDown)
-
-private fun List<KeyCode>.pageRulesFor(to: KeyCode ) =
-    this.combineWith(modifiers())
-        .map { (from, fromModifier) ->
-            pageRule(from, fromModifier, to)
-        }
+    )
+        .zipAll(modifiers())
+        .pageRulesFor(KeyCode.PageDown)
 
 private fun modifiers(): List<ModifierKeyCode> = listOf(LeftControl, Fn)
 
-private fun pageRule(
-    from: KeyCode,
-    fromModifier: ModifierKeyCode,
-    to: KeyCode,
-): KarabinerRule {
-    check(to in listOf(KeyCode.PageUp, KeyCode.PageDown))
+private fun List<Pair<KeyCode, ModifierKeyCode>>.pageRulesFor(toKey: KeyCode): List<KarabinerRule> {
+    check(toKey in listOf(KeyCode.PageUp, KeyCode.PageDown))
 
-    val fromModifierName = fromModifier.name.camelToSnakeCase()
-    val fromName = from.name.camelToSnakeCase()
-
-    return karabinerRule {
-        description =
-            "${to.name.camelToTitleCaseWithSpace()} ($fromModifierName+$fromName)"
-        mapping {
-            fromKey = from
-            fromModifiers = FromModifiers(mandatory = listOf(fromModifier))
-            toKey = to
+    return this.map { (fromKey, fromModifierKey) ->
+        karabinerRuleSimple {
+            this.fromKey = fromKey
+            fromModifier = fromModifierKey
+            this.toKey = toKey
         }
     }
 }
+
+

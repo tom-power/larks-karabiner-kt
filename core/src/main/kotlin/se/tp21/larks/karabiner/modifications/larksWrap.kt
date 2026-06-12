@@ -42,8 +42,8 @@ private fun wrapRule(
     return karabinerRule {
         description = wrapRule.ruleDescription
         mapping {
-            from = From(wrapRule.fromKeyCode, modifiers = FromModifiers(mandatory = listOf(LeftShift, RightShift)))
-            to = listOf(
+            this.from = From(wrapRule.fromKeyCode, modifiers = FromModifiers(mandatory = listOf(LeftShift, RightShift)))
+            this.to = listOf(
                 To(keyCode = KeyCode.X, modifiers = listOf(LeftCommand)),
                 To(shellCommand = "pbpaste | pbcopy -pboard ruler"),
                 wrapRule.toOpen,

@@ -10,8 +10,8 @@ fun larksClicking(): ComplexModifications =
             karabinerRule {
                 description = "left click (q+left_command to left click)"
                 mapping {
-                    from = From(KeyCode.Q, modifiers = FromModifiers(mandatory = listOf(LeftCommand)))
-                    to = listOf(
+                    this.from = From(KeyCode.Q, modifiers = FromModifiers(mandatory = listOf(LeftCommand)))
+                    this.to = listOf(
                         To(pointingButton = "button1")
                     )
                 }
@@ -19,8 +19,8 @@ fun larksClicking(): ComplexModifications =
             karabinerRule {
                 description = "middle click (v+fn to middle click)"
                 mapping {
-                    from = From(KeyCode.V, modifiers = FromModifiers(mandatory = listOf(Fn)))
-                    to = listOf(
+                    this.from = From(KeyCode.V, modifiers = FromModifiers(mandatory = listOf(Fn)))
+                    this.to = listOf(
                         To(pointingButton = "button3")
                     )
                 }

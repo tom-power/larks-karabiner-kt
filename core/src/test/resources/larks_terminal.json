@@ -3,7 +3,7 @@
     "description": "for the terminal",
     "rules": [
         {
-            "description": "Control w (left_command+b to right_control+w)",
+            "description": "w + null (b + left_command)",
             "manipulators": [
                 {
                     "type": "basic",
@@ -17,17 +17,14 @@
                     },
                     "to": [
                         {
-                            "key_code": "w",
-                            "modifiers": [
-                                "left_control"
-                            ]
+                            "key_code": "w"
                         }
                     ]
                 }
             ]
         },
         {
-            "description": "Control u (left_command+u to right_control+u)",
+            "description": "u + null (u + left_command)",
             "manipulators": [
                 {
                     "type": "basic",
@@ -41,17 +38,14 @@
                     },
                     "to": [
                         {
-                            "key_code": "u",
-                            "modifiers": [
-                                "left_control"
-                            ]
+                            "key_code": "u"
                         }
                     ]
                 }
             ]
         },
         {
-            "description": "Control l (left_command+l to right_control+l)",
+            "description": "l + null (l + left_command)",
             "manipulators": [
                 {
                     "type": "basic",
@@ -65,17 +59,14 @@
                     },
                     "to": [
                         {
-                            "key_code": "l",
-                            "modifiers": [
-                                "left_control"
-                            ]
+                            "key_code": "l"
                         }
                     ]
                 }
             ]
         },
         {
-            "description": "Control k (left_command+k to right_control+k)",
+            "description": "k + null (k + left_command)",
             "manipulators": [
                 {
                     "type": "basic",
@@ -89,17 +80,14 @@
                     },
                     "to": [
                         {
-                            "key_code": "k",
-                            "modifiers": [
-                                "left_control"
-                            ]
+                            "key_code": "k"
                         }
                     ]
                 }
             ]
         },
         {
-            "description": "Control q (right_command+q to right_control+q)",
+            "description": "q + null (q + right_command)",
             "manipulators": [
                 {
                     "type": "basic",
@@ -113,17 +101,14 @@
                     },
                     "to": [
                         {
-                            "key_code": "q",
-                            "modifiers": [
-                                "left_control"
-                            ]
+                            "key_code": "q"
                         }
                     ]
                 }
             ]
         },
         {
-            "description": "Control e (right_command+e to right_control+e)",
+            "description": "e + null (e + right_command)",
             "manipulators": [
                 {
                     "type": "basic",
@@ -137,17 +122,14 @@
                     },
                     "to": [
                         {
-                            "key_code": "e",
-                            "modifiers": [
-                                "left_control"
-                            ]
+                            "key_code": "e"
                         }
                     ]
                 }
             ]
         },
         {
-            "description": "Control r (right_command+r to right_control+r)",
+            "description": "r + null (r + right_command)",
             "manipulators": [
                 {
                     "type": "basic",
@@ -161,17 +143,14 @@
                     },
                     "to": [
                         {
-                            "key_code": "r",
-                            "modifiers": [
-                                "left_control"
-                            ]
+                            "key_code": "r"
                         }
                     ]
                 }
             ]
         },
         {
-            "description": "Control a (right_command+a to right_control+a)",
+            "description": "a + null (a + right_command)",
             "manipulators": [
                 {
                     "type": "basic",
@@ -185,17 +164,14 @@
                     },
                     "to": [
                         {
-                            "key_code": "a",
-                            "modifiers": [
-                                "left_control"
-                            ]
+                            "key_code": "a"
                         }
                     ]
                 }
             ]
         },
         {
-            "description": "Control s (right_command+s to right_control+s)",
+            "description": "s + null (s + right_command)",
             "manipulators": [
                 {
                     "type": "basic",
@@ -209,17 +185,14 @@
                     },
                     "to": [
                         {
-                            "key_code": "s",
-                            "modifiers": [
-                                "left_control"
-                            ]
+                            "key_code": "s"
                         }
                     ]
                 }
             ]
         },
         {
-            "description": "Control d (right_command+d to right_control+d)",
+            "description": "d + null (d + right_command)",
             "manipulators": [
                 {
                     "type": "basic",
@@ -233,17 +206,14 @@
                     },
                     "to": [
                         {
-                            "key_code": "d",
-                            "modifiers": [
-                                "left_control"
-                            ]
+                            "key_code": "d"
                         }
                     ]
                 }
             ]
         },
         {
-            "description": "Control z (right_command+z to right_control+z)",
+            "description": "z + null (z + right_command)",
             "manipulators": [
                 {
                     "type": "basic",
@@ -257,17 +227,14 @@
                     },
                     "to": [
                         {
-                            "key_code": "z",
-                            "modifiers": [
-                                "left_control"
-                            ]
+                            "key_code": "z"
                         }
                     ]
                 }
             ]
         },
         {
-            "description": "Control x (right_command+x to right_control+x)",
+            "description": "x + null (x + right_command)",
             "manipulators": [
                 {
                     "type": "basic",
@@ -281,17 +248,14 @@
                     },
                     "to": [
                         {
-                            "key_code": "x",
-                            "modifiers": [
-                                "left_control"
-                            ]
+                            "key_code": "x"
                         }
                     ]
                 }
             ]
         },
         {
-            "description": "Control c (right_command+c to right_control+c)",
+            "description": "c + null (c + right_command)",
             "manipulators": [
                 {
                     "type": "basic",
@@ -305,17 +269,14 @@
                     },
                     "to": [
                         {
-                            "key_code": "c",
-                            "modifiers": [
-                                "left_control"
-                            ]
+                            "key_code": "c"
                         }
                     ]
                 }
             ]
         },
         {
-            "description": "Control v (right_command+v to right_control+v)",
+            "description": "v + null (v + right_command)",
             "manipulators": [
                 {
                     "type": "basic",
@@ -329,10 +290,7 @@
                     },
                     "to": [
                         {
-                            "key_code": "v",
-                            "modifiers": [
-                                "left_control"
-                            ]
+                            "key_code": "v"
                         }
                     ]
                 }
