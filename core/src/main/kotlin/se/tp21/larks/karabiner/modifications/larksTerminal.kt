@@ -52,6 +52,7 @@ private fun KeyMapping.toCommandToControlRuleOn(commandKey: ModifierKeyCode): Ka
             this.fromKey = fromKey
             fromModifier = commandKey
             this.toKey = toKey
+            toModifier = LeftControl
         }
     }
 
