@@ -15,7 +15,7 @@ private fun rules(): List<KarabinerRule> =
 
 private fun leftCommandToControl(): List<KarabinerRule> =
     leftCommandKeyMappings().map {
-        it.toCommandToControlRuleOn(LeftCommand)
+        it.toCommandToControlRule(LeftCommand)
     }
 
 private fun leftCommandKeyMappings(): List<KeyMapping> =
@@ -29,7 +29,7 @@ private fun leftCommandKeyMappings(): List<KeyMapping> =
 
 private fun rightCommandToControl(): List<KarabinerRule> =
     rightCommandKeyMappings().map {
-        it.toCommandToControlRuleOn(RightCommand)
+        it.toCommandToControlRule(RightCommand)
     }
 
 private fun rightCommandKeyMappings(): List<KeyMapping> =
@@ -46,8 +46,10 @@ private fun rightCommandKeyMappings(): List<KeyMapping> =
         KeyCode.V,
     ).map { it to it }
 
-private fun KeyMapping.toCommandToControlRuleOn(commandKey: ModifierKeyCode): KarabinerRule =
-    this.let { (fromKey, toKey) ->
+private fun KeyMapping.toCommandToControlRule(commandKey: ModifierKeyCode): KarabinerRule {
+    check(commandKey in listOf(LeftCommand, RightCommand))
+
+    return this.let { (fromKey, toKey) ->
         karabinerRuleSimple {
             this.fromKey = fromKey
             fromModifier = commandKey
@@ -55,5 +57,6 @@ private fun KeyMapping.toCommandToControlRuleOn(commandKey: ModifierKeyCode): Ka
             toModifier = LeftControl
         }
     }
+}
 
 
