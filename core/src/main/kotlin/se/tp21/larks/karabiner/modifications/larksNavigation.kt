@@ -15,7 +15,7 @@ private fun pageUps() =
         KeyCode.DeleteOrBackspace,
         KeyCode.UpArrow
     )
-        .zipAll(modifiers())
+        .product(modifiers())
         .pageRulesFor(KeyCode.PageUp)
 
 private fun pageDowns() =
@@ -23,7 +23,7 @@ private fun pageDowns() =
         KeyCode.ReturnOrEnter,
         KeyCode.DownArrow,
     )
-        .zipAll(modifiers())
+        .product(modifiers())
         .pageRulesFor(KeyCode.PageDown)
 
 private fun modifiers(): List<ModifierKeyCode> = listOf(LeftControl, Fn)
