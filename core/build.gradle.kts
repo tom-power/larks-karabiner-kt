@@ -6,9 +6,7 @@
  */
 
 plugins {
-    // Apply the org.jetbrains.kotlin.jvm Plugin to add support for Kotlin.
     alias(libs.plugins.kotlin.jvm)
-    alias(libs.plugins.kotlin.serialization) // Apply the Kotlin serialization plugin
 
     `java-library`
     idea
@@ -19,10 +17,6 @@ repositories {
 }
 
 dependencies {
-    implementation(platform(libs.pods4k.bom))
-    implementation(libs.bundles.pods4k)
-    implementation(libs.kotlinx.serialization.json)
-    implementation(libs.kotlin.reflect)
     implementation("karabiner-kt:core:0.2")
 
     testImplementation(libs.bundles.testing)
