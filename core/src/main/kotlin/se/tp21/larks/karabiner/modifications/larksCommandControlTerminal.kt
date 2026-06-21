@@ -11,30 +11,40 @@ fun larksCommandControlTerminal(): ComplexModifications =
     )
 
 private fun rules(): List<KarabinerRule> =
-    leftCommandToControl() + rightCommandToControl()
+    leftCommandToControl() +
+        rightCommandToControl()
 
 private fun leftCommandToControl(): List<KarabinerRule> =
     leftCommandKeyMappings().map {
         it.toCommandToControlRule(LeftCommand)
     }
 
-private fun leftCommandKeyMappings(): List<KeyMapping> =
-    terminalKeys + microKeys
+private fun leftCommandKeyMappings(): List<KeyMapping> = leftTerminalKeys
 
 private fun rightCommandToControl(): List<KarabinerRule> =
     rightCommandKeyMappings().map {
         it.toCommandToControlRule(RightCommand)
     }
 
-private fun rightCommandKeyMappings(): List<KeyMapping> = microKeys
+private fun rightCommandKeyMappings(): List<KeyMapping> =
+    leftTerminalKeys +
+        rightTerminalKeys +
+        microKeys
 
-private val terminalKeys: List<KeyMapping> =
+private val leftTerminalKeys: List<KeyMapping> =
     listOf(
         KeyCode.B to KeyCode.W,
     ) + listOf(
         KeyCode.U,
         KeyCode.L,
         KeyCode.K,
+    ).map { it to it }
+
+
+private val rightTerminalKeys: List<KeyMapping> =
+    listOf(
+        KeyCode.O,
+        KeyCode.P,
     ).map { it to it }
 
 private val microKeys: List<KeyMapping> =
@@ -69,6 +79,7 @@ private val hasTerminalIds =
         "^com\\.jetbrains.*",
         "^com\\.microsoft\\.VSCode.*",
         "^com\\.googlecode\\.iterm2$",
-        "^com\\.cmuxterm\\.app$"
+        "^com\\.cmuxterm\\.app$",
+        "^dev\\.zed\\.Zed$"
     )
 
