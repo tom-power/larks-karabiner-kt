@@ -2,12 +2,12 @@
     "title": "larks gaming",
     "rules": [
         {
-            "description": "left control (left_command+moonlight to left control)",
+            "description": "left control (right_command+moonlight to left control)",
             "manipulators": [
                 {
                     "type": "basic",
                     "from": {
-                        "key_code": "left_command",
+                        "key_code": "right_command",
                         "modifiers": {
                             "optional": [
                                 "any"

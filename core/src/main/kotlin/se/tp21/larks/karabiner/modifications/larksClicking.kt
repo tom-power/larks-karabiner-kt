@@ -8,9 +8,9 @@ fun larksClicking(): ComplexModifications =
         title = "larks clicking",
         rules = listOf(
             karabinerRule {
-                description = "left click (q+left_command to left click)"
+                description = "left click (q+right_command to left click)"
                 mapping {
-                    this.from = From(KeyCode.Q, modifiers = FromModifiers(mandatory = listOf(LeftCommand)))
+                    this.from = From(KeyCode.Q, modifiers = FromModifiers(mandatory = listOf(RightCommand)))
                     this.to = listOf(
                         To(pointingButton = "button1")
                     )

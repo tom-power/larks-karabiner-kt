@@ -2,7 +2,7 @@
     "title": "larks clicking",
     "rules": [
         {
-            "description": "left click (q+left_command to left click)",
+            "description": "left click (q+right_command to left click)",
             "manipulators": [
                 {
                     "type": "basic",
@@ -10,7 +10,7 @@
                         "key_code": "q",
                         "modifiers": {
                             "mandatory": [
-                                "left_command"
+                                "right_command"
                             ]
                         }
                     },

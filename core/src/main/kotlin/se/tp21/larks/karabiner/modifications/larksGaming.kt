@@ -8,9 +8,9 @@ fun larksGaming(): ComplexModifications =
         title = "larks gaming",
         rules = listOf(
             karabinerRule {
-                description = "left control (left_command+moonlight to left control)"
+                description = "left control (right_command+moonlight to left control)"
                 mapping {
-                    fromKey = LeftCommand
+                    fromKey = RightCommand
                     toKey = LeftControl
                     conditions = mutableListOf(
                         Condition.FrontmostApplicationIfCondition(

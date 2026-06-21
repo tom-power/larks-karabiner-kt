@@ -19,6 +19,7 @@ private fun leftCommandToControl(): List<KarabinerRule> =
         it.toCommandToControlRule(LeftCommand)
     }
 
+
 private fun leftCommandKeyMappings(): List<KeyMapping> = leftTerminalKeys
 
 private fun rightCommandToControl(): List<KarabinerRule> =
@@ -34,11 +35,12 @@ private fun rightCommandKeyMappings(): List<KeyMapping> =
 private val leftTerminalKeys: List<KeyMapping> =
     listOf(
         KeyCode.B to KeyCode.W,
-    ) + listOf(
+    ) + (
+        listOf(
         KeyCode.U,
         KeyCode.L,
         KeyCode.K,
-    ).map { it to it }
+    ).map { it to it })
 
 
 private val rightTerminalKeys: List<KeyMapping> =

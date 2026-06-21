@@ -3,7 +3,7 @@
     "description": "command extras",
     "rules": [
         {
-            "description": "Escape (left_command+space to escape)",
+            "description": "Escape (right_command+space to escape)",
             "manipulators": [
                 {
                     "type": "basic",
@@ -14,7 +14,7 @@
                                 "any"
                             ],
                             "mandatory": [
-                                "left_command"
+                                "right_command"
                             ]
                         }
                     },
@@ -35,7 +35,7 @@
                         "key_code": "return_or_enter",
                         "modifiers": {
                             "mandatory": [
-                                "left_command"
+                                "right_command"
                             ]
                         }
                     },
