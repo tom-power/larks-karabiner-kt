@@ -5,10 +5,11 @@ import sh.kau.karabiner.ComplexModifications
 
 val larksMap: Map<String, ComplexModifications> =
     mapOf(
+        "clicking" to larksClicking(),
+        "command" to larksCommand(),
+        "commandControl" to larksCommandControl(),
+        "gaming" to larksGaming(),
         "macToPc" to larksMacToPc(),
         "navigation" to larksNavigation(),
-        "clicking" to larksClicking(),
-        "terminal" to larksTerminal(),
         "wrap" to larksWrap(),
-        "gaming" to larksGaming()
     )
