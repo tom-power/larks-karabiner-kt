@@ -21,6 +21,11 @@
                                 "left_shift"
                             ]
                         }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if"
+                        }
                     ]
                 }
             ]

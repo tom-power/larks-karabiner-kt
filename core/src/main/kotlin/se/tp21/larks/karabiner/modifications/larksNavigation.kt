@@ -32,7 +32,7 @@ private fun List<Pair<KeyCode, ModifierKeyCode>>.pageRulesFor(toKey: KeyCode): L
     check(toKey in listOf(KeyCode.PageUp, KeyCode.PageDown))
 
     return this.map { (fromKey, fromModifierKey) ->
-        karabinerRuleSimple {
+        karabinerRuleAutoDescription {
             this.fromKey = fromKey
             fromModifier = fromModifierKey
             this.toKey = toKey

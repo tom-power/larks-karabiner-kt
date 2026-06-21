@@ -11,7 +11,7 @@ fun larksMacToPc(): ComplexModifications =
 
 private fun rules(): List<KarabinerRule> =
     listOf(
-        karabinerRuleSimple {
+        karabinerRuleAutoDescription {
             description = "\" (2 + right_shift)"
             fromKey = KeyCode.Num2
             fromModifier = RightShift
