@@ -37,10 +37,10 @@ private val leftTerminalKeys: List<KeyMapping> =
         KeyCode.B to KeyCode.W,
     ) + (
         listOf(
-        KeyCode.U,
-        KeyCode.L,
-        KeyCode.K,
-    ).map { it to it })
+            KeyCode.U,
+            KeyCode.L,
+            KeyCode.K,
+        ).map { it to it })
 
 
 private val rightTerminalKeys: List<KeyMapping> =
@@ -51,6 +51,9 @@ private val rightTerminalKeys: List<KeyMapping> =
 
 private val microKeys: List<KeyMapping> =
     listOf(
+        KeyCode.Slash to KeyCode.Backslash, // stop the beeps
+    ) +
+        listOf(
         KeyCode.Q,
         KeyCode.A,
         KeyCode.S,
@@ -59,7 +62,6 @@ private val microKeys: List<KeyMapping> =
         KeyCode.X,
         KeyCode.C,
         KeyCode.V,
-        KeyCode.Slash,
     ).map { it to it }
 
 private fun KeyMapping.toCommandToControlRule(commandKey: ModifierKeyCode): KarabinerRule {
@@ -69,8 +71,10 @@ private fun KeyMapping.toCommandToControlRule(commandKey: ModifierKeyCode): Kara
         karabinerRuleSingle {
             this.fromKey = fromKey
             fromModifiers = FromModifiers(mandatory = listOf(commandKey))
-            this.toKey = toKey
-            this.toModifiers = listOf(LeftControl)
+            to = listOf(
+//                To(toKey, listOf(commandKey)),
+                To(toKey, listOf(LeftControl)),
+            )
             forApp {
                 bundleIds = hasTerminalIds
             }
