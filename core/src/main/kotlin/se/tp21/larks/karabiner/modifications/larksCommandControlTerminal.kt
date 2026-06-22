@@ -12,27 +12,31 @@ fun larksCommandControlTerminal(): ComplexModifications =
 
 private fun rules(): List<KarabinerRule> =
     leftCommandToControl() +
-        rightCommandToControl()
+        rightCommandToControl() // capslock bound to this through SimpleModification
 
 private fun leftCommandToControl(): List<KarabinerRule> =
     leftCommandKeyMappings().map {
-        it.toCommandToControlRule(LeftCommand)
+        it.toCommandToControlRule(
+            commandKey = LeftCommand,
+            forIds = hasTerminalIds
+        )
     }
-
-
-private fun leftCommandKeyMappings(): List<KeyMapping> = leftTerminalKeys
 
 private fun rightCommandToControl(): List<KarabinerRule> =
     rightCommandKeyMappings().map {
-        it.toCommandToControlRule(RightCommand)
+        it.toCommandToControlRule(
+            commandKey = RightCommand,
+            forIds = hasTerminalIds
+        )
     }
 
-private fun rightCommandKeyMappings(): List<KeyMapping> =
-    leftTerminalKeys +
-        rightTerminalKeys +
-        microKeys
+private fun leftCommandKeyMappings(): List<KeyMapping> = leftCommandTerminalKeys
 
-private val leftTerminalKeys: List<KeyMapping> =
+private fun rightCommandKeyMappings(): List<KeyMapping> =
+    rightCommandTerminalKeys +
+        rightCommandMicroKeys
+
+private val leftCommandTerminalKeys: List<KeyMapping> =
     listOf(
         KeyCode.B to KeyCode.W,
     ) + (
@@ -42,29 +46,31 @@ private val leftTerminalKeys: List<KeyMapping> =
             KeyCode.K,
         ).map { it to it })
 
-
-private val rightTerminalKeys: List<KeyMapping> =
+private val rightCommandTerminalKeys: List<KeyMapping> =
     listOf(
         KeyCode.O,
         KeyCode.P,
     ).map { it to it }
 
-private val microKeys: List<KeyMapping> =
+private val rightCommandMicroKeys: List<KeyMapping> =
     listOf(
         KeyCode.Slash to KeyCode.Backslash, // stop the beeps
     ) +
         listOf(
-        KeyCode.Q,
-        KeyCode.A,
-        KeyCode.S,
-        KeyCode.D,
-        KeyCode.Z,
-        KeyCode.X,
-        KeyCode.C,
-        KeyCode.V,
-    ).map { it to it }
+//            KeyCode.Q,
+            KeyCode.A,
+            KeyCode.S,
+            KeyCode.D,
+            KeyCode.Z,
+//        KeyCode.X,
+//        KeyCode.C,
+//        KeyCode.V,
+        ).map { it to it }
 
-private fun KeyMapping.toCommandToControlRule(commandKey: ModifierKeyCode): KarabinerRule {
+private fun KeyMapping.toCommandToControlRule(
+    commandKey: ModifierKeyCode,
+    forIds: List<String>,
+): KarabinerRule {
     check(commandKey in listOf(LeftCommand, RightCommand))
 
     return this.let { (fromKey, toKey) ->
@@ -76,7 +82,7 @@ private fun KeyMapping.toCommandToControlRule(commandKey: ModifierKeyCode): Kara
                 To(toKey, listOf(LeftControl)),
             )
             forApp {
-                bundleIds = hasTerminalIds
+                bundleIds = forIds
             }
             this.description = description()
         }
@@ -91,4 +97,3 @@ private val hasTerminalIds =
         "^com\\.cmuxterm\\.app$",
         "^dev\\.zed\\.Zed$"
     )
-
