@@ -2,7 +2,7 @@
     "title": "larks navigation",
     "rules": [
         {
-            "description": "page_up + null (delete_or_backspace + left_control)",
+            "description": "page_up (delete_or_backspace + left_control)",
             "manipulators": [
                 {
                     "type": "basic",
@@ -18,17 +18,12 @@
                         {
                             "key_code": "page_up"
                         }
-                    ],
-                    "conditions": [
-                        {
-                            "type": "frontmost_application_if"
-                        }
                     ]
                 }
             ]
         },
         {
-            "description": "page_up + null (delete_or_backspace + fn)",
+            "description": "page_up (delete_or_backspace + fn)",
             "manipulators": [
                 {
                     "type": "basic",
@@ -44,17 +39,12 @@
                         {
                             "key_code": "page_up"
                         }
-                    ],
-                    "conditions": [
-                        {
-                            "type": "frontmost_application_if"
-                        }
                     ]
                 }
             ]
         },
         {
-            "description": "page_up + null (up_arrow + left_control)",
+            "description": "page_up (up_arrow + left_control)",
             "manipulators": [
                 {
                     "type": "basic",
@@ -70,17 +60,12 @@
                         {
                             "key_code": "page_up"
                         }
-                    ],
-                    "conditions": [
-                        {
-                            "type": "frontmost_application_if"
-                        }
                     ]
                 }
             ]
         },
         {
-            "description": "page_up + null (up_arrow + fn)",
+            "description": "page_up (up_arrow + fn)",
             "manipulators": [
                 {
                     "type": "basic",
@@ -96,17 +81,12 @@
                         {
                             "key_code": "page_up"
                         }
-                    ],
-                    "conditions": [
-                        {
-                            "type": "frontmost_application_if"
-                        }
                     ]
                 }
             ]
         },
         {
-            "description": "page_down + null (return_or_enter + left_control)",
+            "description": "page_down (return_or_enter + left_control)",
             "manipulators": [
                 {
                     "type": "basic",
@@ -122,17 +102,12 @@
                         {
                             "key_code": "page_down"
                         }
-                    ],
-                    "conditions": [
-                        {
-                            "type": "frontmost_application_if"
-                        }
                     ]
                 }
             ]
         },
         {
-            "description": "page_down + null (return_or_enter + fn)",
+            "description": "page_down (return_or_enter + fn)",
             "manipulators": [
                 {
                     "type": "basic",
@@ -148,17 +123,12 @@
                         {
                             "key_code": "page_down"
                         }
-                    ],
-                    "conditions": [
-                        {
-                            "type": "frontmost_application_if"
-                        }
                     ]
                 }
             ]
         },
         {
-            "description": "page_down + null (down_arrow + left_control)",
+            "description": "page_down (down_arrow + left_control)",
             "manipulators": [
                 {
                     "type": "basic",
@@ -174,17 +144,12 @@
                         {
                             "key_code": "page_down"
                         }
-                    ],
-                    "conditions": [
-                        {
-                            "type": "frontmost_application_if"
-                        }
                     ]
                 }
             ]
         },
         {
-            "description": "page_down + null (down_arrow + fn)",
+            "description": "page_down (down_arrow + fn)",
             "manipulators": [
                 {
                     "type": "basic",
@@ -199,11 +164,6 @@
                     "to": [
                         {
                             "key_code": "page_down"
-                        }
-                    ],
-                    "conditions": [
-                        {
-                            "type": "frontmost_application_if"
                         }
                     ]
                 }

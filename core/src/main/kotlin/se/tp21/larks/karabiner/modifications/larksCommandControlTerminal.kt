@@ -66,12 +66,15 @@ private fun KeyMapping.toCommandToControlRule(commandKey: ModifierKeyCode): Kara
     check(commandKey in listOf(LeftCommand, RightCommand))
 
     return this.let { (fromKey, toKey) ->
-        karabinerRuleAutoDescription {
+        karabinerRuleSingle {
             this.fromKey = fromKey
-            fromModifier = commandKey
+            fromModifiers = FromModifiers(mandatory = listOf(commandKey))
             this.toKey = toKey
-            toModifier = LeftControl
-            forAppIds = hasTerminalIds
+            this.toModifiers = listOf(LeftControl)
+            forApp {
+                bundleIds = hasTerminalIds
+            }
+            this.description = description()
         }
     }
 }

@@ -32,10 +32,11 @@ private fun List<Pair<KeyCode, ModifierKeyCode>>.pageRulesFor(toKey: KeyCode): L
     check(toKey in listOf(KeyCode.PageUp, KeyCode.PageDown))
 
     return this.map { (fromKey, fromModifierKey) ->
-        karabinerRuleAutoDescription {
+        karabinerRuleSingle {
             this.fromKey = fromKey
-            fromModifier = fromModifierKey
+            this.fromModifiers = FromModifiers(mandatory = listOf(fromModifierKey))
             this.toKey = toKey
+            this.description = description()
         }
     }
 }
