@@ -9,10 +9,10 @@ fun larksCommand(): ComplexModifications =
         description = "command extras",
         rules = listOf(
             karabinerRule {
-                description = "Escape (right_command+space to escape)"
+                description = "Escape (left_command+space to escape)"
                 mapping {
                     fromKey = KeyCode.Spacebar
-                    fromModifiers = FromModifiers(mandatory = listOf(RightCommand), optional = listOf(Any))
+                    fromModifiers = FromModifiers(mandatory = listOf(LeftCommand), optional = listOf(Any))
                     toKey = KeyCode.Escape
                 }
             },
@@ -20,7 +20,7 @@ fun larksCommand(): ComplexModifications =
                 description = "Spotlight (left_command+return to left_command+spacebar)"
                 mapping {
                     fromKey = KeyCode.ReturnOrEnter
-                    fromModifiers = FromModifiers(mandatory = listOf(RightCommand))
+                    fromModifiers = FromModifiers(mandatory = listOf(LeftCommand))
                     toKey = KeyCode.Spacebar
                     toModifiers = listOf(LeftCommand)
                 }
