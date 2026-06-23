@@ -2,6 +2,7 @@ package se.tp21.larks.karabiner.modifications
 
 import sh.kau.karabiner.*
 import sh.kau.karabiner.ModifierKeyCode.*
+import kotlin.collections.listOf
 
 fun larksCommandControlTerminal(): ComplexModifications =
     ComplexModifications(
@@ -11,8 +12,8 @@ fun larksCommandControlTerminal(): ComplexModifications =
     )
 
 private fun rules(): List<KarabinerRule> =
-    leftCommandToControl() +
-        rightCommandToControl() // capslock bound to this through SimpleModification
+    leftCommandToControl() + // capslock bound to this through SimpleModification
+        rightCommandToControl()
 
 private fun leftCommandToControl(): List<KarabinerRule> =
     leftCommandKeyMappings().map {
@@ -30,11 +31,14 @@ private fun rightCommandToControl(): List<KarabinerRule> =
         )
     }
 
-private fun leftCommandKeyMappings(): List<KeyMapping> = leftCommandTerminalKeys
+private fun leftCommandKeyMappings(): List<KeyMapping> =
+    leftCommandTerminalKeys +
+        capslockTerminalKeys +
+        capslockMicroKeys
+
 
 private fun rightCommandKeyMappings(): List<KeyMapping> =
-    rightCommandTerminalKeys +
-        rightCommandMicroKeys
+    rightCommandControlKeys
 
 private val leftCommandTerminalKeys: List<KeyMapping> =
     listOf(
@@ -46,26 +50,43 @@ private val leftCommandTerminalKeys: List<KeyMapping> =
             KeyCode.K,
         ).map { it to it })
 
-private val rightCommandTerminalKeys: List<KeyMapping> =
+private val capslockTerminalKeys: List<KeyMapping> =
     listOf(
         KeyCode.O,
         KeyCode.P,
     ).map { it to it }
 
-private val rightCommandMicroKeys: List<KeyMapping> =
+private val capslockMicroKeys: List<KeyMapping> =
     listOf(
         KeyCode.Slash to KeyCode.Backslash, // stop the beeps
     ) +
         listOf(
 //            KeyCode.Q,
+//            KeyCode.R,
             KeyCode.A,
             KeyCode.S,
             KeyCode.D,
-            KeyCode.Z,
-//        KeyCode.X,
-//        KeyCode.C,
-//        KeyCode.V,
+//            KeyCode.Z,
+//            KeyCode.X,
+//            KeyCode.C,
+//            KeyCode.V,
         ).map { it to it }
+
+private val rightCommandControlKeys: List<KeyMapping> =
+//    listOf(
+//        KeyCode.Slash to KeyCode.Backslash, // stop the beeps
+//    ) +
+    listOf(
+//            KeyCode.Q,
+        KeyCode.R,
+        KeyCode.A,
+        KeyCode.S,
+        KeyCode.D,
+        KeyCode.Z,
+        KeyCode.X,
+        KeyCode.C,
+        KeyCode.V,
+    ).map { it to it }
 
 private fun KeyMapping.toCommandToControlRule(
     commandKey: ModifierKeyCode,

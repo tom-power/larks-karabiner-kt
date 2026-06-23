@@ -147,7 +147,7 @@
             ]
         },
         {
-            "description": " (o + right_command)",
+            "description": " (o + left_command)",
             "manipulators": [
                 {
                     "type": "basic",
@@ -155,7 +155,7 @@
                         "key_code": "o",
                         "modifiers": {
                             "mandatory": [
-                                "right_command"
+                                "left_command"
                             ]
                         }
                     },
@@ -183,7 +183,7 @@
             ]
         },
         {
-            "description": " (p + right_command)",
+            "description": " (p + left_command)",
             "manipulators": [
                 {
                     "type": "basic",
@@ -191,7 +191,7 @@
                         "key_code": "p",
                         "modifiers": {
                             "mandatory": [
-                                "right_command"
+                                "left_command"
                             ]
                         }
                     },
@@ -219,12 +219,156 @@
             ]
         },
         {
-            "description": " (slash + right_command)",
+            "description": " (slash + left_command)",
             "manipulators": [
                 {
                     "type": "basic",
                     "from": {
                         "key_code": "slash",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_command"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "backslash",
+                            "modifiers": [
+                                "left_control"
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com\\.jetbrains.*",
+                                "^com\\.microsoft\\.VSCode.*",
+                                "^com\\.googlecode\\.iterm2$",
+                                "^com\\.cmuxterm\\.app$",
+                                "^dev\\.zed\\.Zed$"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": " (a + left_command)",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "a",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_command"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "a",
+                            "modifiers": [
+                                "left_control"
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com\\.jetbrains.*",
+                                "^com\\.microsoft\\.VSCode.*",
+                                "^com\\.googlecode\\.iterm2$",
+                                "^com\\.cmuxterm\\.app$",
+                                "^dev\\.zed\\.Zed$"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": " (s + left_command)",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "s",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_command"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "s",
+                            "modifiers": [
+                                "left_control"
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com\\.jetbrains.*",
+                                "^com\\.microsoft\\.VSCode.*",
+                                "^com\\.googlecode\\.iterm2$",
+                                "^com\\.cmuxterm\\.app$",
+                                "^dev\\.zed\\.Zed$"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": " (d + left_command)",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "d",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_command"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "d",
+                            "modifiers": [
+                                "left_control"
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com\\.jetbrains.*",
+                                "^com\\.microsoft\\.VSCode.*",
+                                "^com\\.googlecode\\.iterm2$",
+                                "^com\\.cmuxterm\\.app$",
+                                "^dev\\.zed\\.Zed$"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": " (r + right_command)",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "r",
                         "modifiers": {
                             "mandatory": [
                                 "right_command"
@@ -233,7 +377,7 @@
                     },
                     "to": [
                         {
-                            "key_code": "backslash",
+                            "key_code": "r",
                             "modifiers": [
                                 "left_control"
                             ]
@@ -378,6 +522,114 @@
                     "to": [
                         {
                             "key_code": "z",
+                            "modifiers": [
+                                "left_control"
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com\\.jetbrains.*",
+                                "^com\\.microsoft\\.VSCode.*",
+                                "^com\\.googlecode\\.iterm2$",
+                                "^com\\.cmuxterm\\.app$",
+                                "^dev\\.zed\\.Zed$"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": " (x + right_command)",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "x",
+                        "modifiers": {
+                            "mandatory": [
+                                "right_command"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "x",
+                            "modifiers": [
+                                "left_control"
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com\\.jetbrains.*",
+                                "^com\\.microsoft\\.VSCode.*",
+                                "^com\\.googlecode\\.iterm2$",
+                                "^com\\.cmuxterm\\.app$",
+                                "^dev\\.zed\\.Zed$"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": " (c + right_command)",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "c",
+                        "modifiers": {
+                            "mandatory": [
+                                "right_command"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "c",
+                            "modifiers": [
+                                "left_control"
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com\\.jetbrains.*",
+                                "^com\\.microsoft\\.VSCode.*",
+                                "^com\\.googlecode\\.iterm2$",
+                                "^com\\.cmuxterm\\.app$",
+                                "^dev\\.zed\\.Zed$"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": " (v + right_command)",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "v",
+                        "modifiers": {
+                            "mandatory": [
+                                "right_command"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "v",
                             "modifiers": [
                                 "left_control"
                             ]
