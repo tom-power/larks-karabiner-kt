@@ -33,9 +33,7 @@ private fun rightCommandToControl(): List<KarabinerRule> =
 
 private fun leftCommandKeyMappings(): List<KeyMapping> =
     leftCommandTerminalKeys +
-        capslockTerminalKeys +
         capslockMicroKeys
-
 
 private fun rightCommandKeyMappings(): List<KeyMapping> =
     rightCommandControlKeys
@@ -50,35 +48,22 @@ private val leftCommandTerminalKeys: List<KeyMapping> =
             KeyCode.K,
         ).map { it to it })
 
-private val capslockTerminalKeys: List<KeyMapping> =
-    listOf(
-        KeyCode.O,
-        KeyCode.P,
-    ).map { it to it }
-
 private val capslockMicroKeys: List<KeyMapping> =
     listOf(
         KeyCode.Slash to KeyCode.Backslash, // stop the beeps
     ) +
         listOf(
 //            KeyCode.Q,
-//            KeyCode.R,
             KeyCode.A,
             KeyCode.S,
             KeyCode.D,
-//            KeyCode.Z,
-//            KeyCode.X,
-//            KeyCode.C,
-//            KeyCode.V,
         ).map { it to it }
 
 private val rightCommandControlKeys: List<KeyMapping> =
-//    listOf(
-//        KeyCode.Slash to KeyCode.Backslash, // stop the beeps
-//    ) +
     listOf(
-//            KeyCode.Q,
         KeyCode.R,
+        KeyCode.O,
+        KeyCode.P,
         KeyCode.A,
         KeyCode.S,
         KeyCode.D,
