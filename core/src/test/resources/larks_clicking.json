@@ -10,7 +10,7 @@
                         "key_code": "q",
                         "modifiers": {
                             "mandatory": [
-                                "right_command"
+                                "left_command"
                             ]
                         }
                     },
