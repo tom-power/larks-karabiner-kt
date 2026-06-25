@@ -40,23 +40,23 @@ private fun rightCommandKeyMappings(): List<KeyMapping> =
 
 private val leftCommandTerminalKeys: List<KeyMapping> =
     listOf(
-        KeyCode.B to KeyCode.W,
+        KeyCode.B to KeyCode.W, // delete word backwards
     ) + (
         listOf(
-            KeyCode.U,
-            KeyCode.L,
-            KeyCode.K,
+            KeyCode.U, // delete to start of line
+            KeyCode.K, // delete to end of line
+            KeyCode.L, // clear
         ).map { it to it })
 
 private val capslockMicroKeys: List<KeyMapping> =
     listOf(
-        KeyCode.Slash to KeyCode.Backslash, // stop the beeps
+        KeyCode.Slash to KeyCode.Backslash, // comment line, no beeps
     ) +
         listOf(
 //            KeyCode.Q,
-            KeyCode.A,
-            KeyCode.S,
-            KeyCode.D,
+            KeyCode.A, // select all
+            KeyCode.S, // save
+            KeyCode.D, // duplicate line
         ).map { it to it }
 
 private val rightCommandControlKeys: List<KeyMapping> =
