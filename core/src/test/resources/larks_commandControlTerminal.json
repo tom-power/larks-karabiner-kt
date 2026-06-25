@@ -75,12 +75,12 @@
             ]
         },
         {
-            "description": " (l + left_command)",
+            "description": " (k + left_command)",
             "manipulators": [
                 {
                     "type": "basic",
                     "from": {
-                        "key_code": "l",
+                        "key_code": "k",
                         "modifiers": {
                             "mandatory": [
                                 "left_command"
@@ -89,7 +89,7 @@
                     },
                     "to": [
                         {
-                            "key_code": "l",
+                            "key_code": "k",
                             "modifiers": [
                                 "left_control"
                             ]
@@ -111,12 +111,12 @@
             ]
         },
         {
-            "description": " (k + left_command)",
+            "description": " (l + left_command)",
             "manipulators": [
                 {
                     "type": "basic",
                     "from": {
-                        "key_code": "k",
+                        "key_code": "l",
                         "modifiers": {
                             "mandatory": [
                                 "left_command"
@@ -125,7 +125,7 @@
                     },
                     "to": [
                         {
-                            "key_code": "k",
+                            "key_code": "l",
                             "modifiers": [
                                 "left_control"
                             ]
