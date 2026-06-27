@@ -27,7 +27,7 @@ private fun rightCommandToControl(): List<KarabinerRule> =
     rightCommandKeyMappings().map {
         it.toCommandToControlRule(
             commandKey = RightCommand,
-            forIds = hasTerminalIds
+            forIds = null
         )
     }
 
@@ -53,29 +53,46 @@ private val capslockMicroKeys: List<KeyMapping> =
         KeyCode.Slash to KeyCode.Backslash, // comment line, no beeps
     ) +
         listOf(
-//            KeyCode.Q,
             KeyCode.A, // select all
             KeyCode.S, // save
             KeyCode.D, // duplicate line
         ).map { it to it }
 
-private val rightCommandControlKeys: List<KeyMapping> =
+private val rightCommandControlKeys: List<KeyMapping> = allLetters().map { it to it }
+
+private fun allLetters(): List<KeyCode> =
     listOf(
-        KeyCode.R,
+        KeyCode.A,
+        KeyCode.B,
+        KeyCode.C,
+        KeyCode.D,
+        KeyCode.E,
+        KeyCode.F,
+        KeyCode.G,
+        KeyCode.H,
+        KeyCode.I,
+        KeyCode.J,
+        KeyCode.K,
+        KeyCode.L,
+        KeyCode.M,
+        KeyCode.N,
         KeyCode.O,
         KeyCode.P,
-        KeyCode.A,
+        KeyCode.Q,
+        KeyCode.R,
         KeyCode.S,
-        KeyCode.D,
-        KeyCode.Z,
-        KeyCode.X,
-        KeyCode.C,
+        KeyCode.T,
+        KeyCode.U,
         KeyCode.V,
-    ).map { it to it }
+        KeyCode.W,
+        KeyCode.X,
+        KeyCode.Y,
+        KeyCode.Z
+    )
 
 private fun KeyMapping.toCommandToControlRule(
     commandKey: ModifierKeyCode,
-    forIds: List<String>,
+    forIds: List<String>?,
 ): KarabinerRule {
     check(commandKey in listOf(LeftCommand, RightCommand))
 
@@ -87,8 +104,10 @@ private fun KeyMapping.toCommandToControlRule(
 //                To(toKey, listOf(commandKey)),
                 To(toKey, listOf(LeftControl)),
             )
-            forApp {
-                bundleIds = forIds
+            forIds?.let {
+                forApp {
+                    bundleIds = it
+                }
             }
             this.description = description()
         }
