@@ -39,14 +39,13 @@ private fun rightCommandKeyMappings(): List<KeyMapping> =
     rightCommandControlKeys
 
 private val leftCommandTerminalKeys: List<KeyMapping> =
-    listOf(
-        KeyCode.B to KeyCode.W, // delete word backwards
-    ) + (
         listOf(
-            KeyCode.U, // delete to start of line
-            KeyCode.K, // delete to end of line
+            KeyCode.B, // backward-char or custom
+            KeyCode.H, // backward-delete-char or custom
+            KeyCode.U, // backward-kill-line
+            KeyCode.K, // kill-line
             KeyCode.L, // clear
-        ).map { it to it })
+        ).map { it to it }
 
 private val capslockMicroKeys: List<KeyMapping> =
     listOf(
