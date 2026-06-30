@@ -56,6 +56,7 @@ private val capslockMicroKeys: List<KeyMapping> =
             KeyCode.A, // select all
             KeyCode.S, // save
             KeyCode.D, // duplicate line
+            KeyCode.Z, // undo
         ).map { it to it }
 
 private val rightCommandControlKeys: List<KeyMapping> = allLettersKeyCodes().map { it to it }

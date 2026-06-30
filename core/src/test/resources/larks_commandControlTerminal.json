@@ -291,6 +291,42 @@
             ]
         },
         {
+            "description": " (z + left_command)",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "z",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_command"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "z",
+                            "modifiers": [
+                                "left_control"
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com\\.jetbrains.*",
+                                "^com\\.microsoft\\.VSCode.*",
+                                "^com\\.googlecode\\.iterm2$",
+                                "^com\\.cmuxterm\\.app$",
+                                "^dev\\.zed\\.Zed$"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "description": " (a + right_command)",
             "manipulators": [
                 {
