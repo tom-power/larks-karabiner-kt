@@ -39,9 +39,10 @@ private fun rightCommandKeyMappings(): List<KeyMapping> =
     rightCommandControlKeys
 
 private val leftCommandTerminalKeys: List<KeyMapping> =
+    listOf(
+        KeyCode.B to KeyCode.W // backward-kill-word
+    ) +
         listOf(
-            KeyCode.B, // backward-char or custom
-            KeyCode.H, // backward-delete-char or custom
             KeyCode.U, // backward-kill-line
             KeyCode.K, // kill-line
             KeyCode.L, // clear
@@ -57,37 +58,12 @@ private val capslockMicroKeys: List<KeyMapping> =
             KeyCode.D, // duplicate line
         ).map { it to it }
 
-private val rightCommandControlKeys: List<KeyMapping> = allLetters().map { it to it }
+private val rightCommandControlKeys: List<KeyMapping> = allLettersKeyCodes().map { it to it }
 
-private fun allLetters(): List<KeyCode> =
-    listOf(
-        KeyCode.A,
-        KeyCode.B,
-        KeyCode.C,
-        KeyCode.D,
-        KeyCode.E,
-        KeyCode.F,
-        KeyCode.G,
-        KeyCode.H,
-        KeyCode.I,
-        KeyCode.J,
-        KeyCode.K,
-        KeyCode.L,
-        KeyCode.M,
-        KeyCode.N,
-        KeyCode.O,
-        KeyCode.P,
-        KeyCode.Q,
-        KeyCode.R,
-        KeyCode.S,
-        KeyCode.T,
-        KeyCode.U,
-        KeyCode.V,
-        KeyCode.W,
-        KeyCode.X,
-        KeyCode.Y,
-        KeyCode.Z
-    )
+private fun allLettersKeyCodes(): List<KeyCode> =
+    ('A'..'Z').toList()
+        .map { it.toString() }
+        .mapNotNull { it.toKeycode() }
 
 private fun KeyMapping.toCommandToControlRule(
     commandKey: ModifierKeyCode,

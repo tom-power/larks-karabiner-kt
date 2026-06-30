@@ -10,3 +10,6 @@ fun <T, R> List<T>.product(values: List<R>): List<Pair<T, R>> =
             key to value
         }
     }
+
+fun String.toKeycode(): KeyCode? = keyCodes.singleOrNull { this == it.name }
+private val keyCodes: List<KeyCode> = KeyCode::class.sealedSubclasses.mapNotNull { it.objectInstance }
