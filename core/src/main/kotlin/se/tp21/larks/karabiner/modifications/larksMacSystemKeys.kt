@@ -4,15 +4,15 @@ import sh.kau.karabiner.*
 import sh.kau.karabiner.KeyCode.*
 import sh.kau.karabiner.ModifierKeyCode.LeftControl
 
-fun larksMacKeys() =
+fun larksMacSystemKeys() =
     ComplexModifications(
-        title = "larks mac keys",
+        title = "larks mac system keys",
         rules = macKeys()
     )
 
-private fun fromMacKeysNum() = listOf(Num1, Num2, Num0, Hyphen, EqualSign)
-private fun fromMacKeysFn() = listOf(F1, F2, F10, F11, F12)
-private fun toMacKeys() =
+private fun fromKeysNum() = listOf(Num1, Num2, Num0, Hyphen, EqualSign)
+private fun fromKeysFn() = listOf(F1, F2, F10, F11, F12)
+private fun toMacSystemKeys() =
     listOf(
         DisplayBrightnessDecrement,
         DisplayBrightnessIncrement,
@@ -22,9 +22,9 @@ private fun toMacKeys() =
     )
 
 private fun macKeys(): List<KarabinerRule> {
-    val macKeysNum = fromMacKeysNum().zip(toMacKeys())
-    val macKeysFn = fromMacKeysFn().zip(toMacKeys())
-    return (macKeysNum + macKeysFn).map { (fromKeyCode, toKeyCode) ->
+    val macSystemKeysNum = fromKeysNum().zip(toMacSystemKeys())
+    val macSystemKeysFn = fromKeysFn().zip(toMacSystemKeys())
+    return (macSystemKeysNum + macSystemKeysFn).map { (fromKeyCode, toKeyCode) ->
         karabinerRuleSingle {
             this.fromKey = fromKeyCode
             fromModifiers = FromModifiers(mandatory = listOf(LeftControl))

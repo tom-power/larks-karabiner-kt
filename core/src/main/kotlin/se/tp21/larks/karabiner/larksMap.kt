@@ -9,7 +9,7 @@ val larksMap: Map<String, ComplexModifications> =
         "command" to larksCommand(),
         "commandControlTerminal" to larksCommandControlTerminal(),
         "gaming" to larksGaming(),
-        "macKeys" to larksMacKeys(),
+        "macSystemKeys" to larksMacSystemKeys(),
         "navigation" to larksNavigation(),
         "wrap" to larksWrap(),
     )
