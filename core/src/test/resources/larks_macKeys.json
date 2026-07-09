@@ -2,7 +2,7 @@
     "title": "larks mac keys",
     "rules": [
         {
-            "description": "brightness decrement (left_control + 1)",
+            "description": "display_brightness_decrement (num1 + left_control)",
             "manipulators": [
                 {
                     "type": "basic",
@@ -23,7 +23,7 @@
             ]
         },
         {
-            "description": "brightness increment (left_control + 2)",
+            "description": "display_brightness_increment (num2 + left_control)",
             "manipulators": [
                 {
                     "type": "basic",
@@ -44,28 +44,7 @@
             ]
         },
         {
-            "description": "mission control (left_control + 3)",
-            "manipulators": [
-                {
-                    "type": "basic",
-                    "from": {
-                        "key_code": "3",
-                        "modifiers": {
-                            "mandatory": [
-                                "left_control"
-                            ]
-                        }
-                    },
-                    "to": [
-                        {
-                            "key_code": "mission_control"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "description": "mute (left_control + 0)",
+            "description": "mute (num0 + left_control)",
             "manipulators": [
                 {
                     "type": "basic",
@@ -86,7 +65,7 @@
             ]
         },
         {
-            "description": "volume decrement (left_control + hyphen)",
+            "description": "volume_decrement (hyphen + left_control)",
             "manipulators": [
                 {
                     "type": "basic",
@@ -107,12 +86,117 @@
             ]
         },
         {
-            "description": "volume increment (left_control + equals)",
+            "description": "volume_increment (equal_sign + left_control)",
             "manipulators": [
                 {
                     "type": "basic",
                     "from": {
                         "key_code": "equal_sign",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "volume_increment"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "display_brightness_decrement (f1 + left_control)",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "f1",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "display_brightness_decrement"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "display_brightness_increment (f2 + left_control)",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "f2",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "display_brightness_increment"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "mute (f10 + left_control)",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "f10",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "mute"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "volume_decrement (f11 + left_control)",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "f11",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "volume_decrement"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "volume_increment (f12 + left_control)",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "f12",
                         "modifiers": {
                             "mandatory": [
                                 "left_control"
