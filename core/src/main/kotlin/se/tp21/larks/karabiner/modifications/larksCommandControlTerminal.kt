@@ -16,63 +16,72 @@ private fun rules(): List<KarabinerRule> =
         rightCommandToControl()
 
 private fun leftCommandToControl(): List<KarabinerRule> =
-    leftCommandKeyMappings().map {
-        it.toCommandToControlRule(
+    leftCommandKeyCodeMaps().map { keyCodeMap ->
+        commandToControlRuleFor(
+            keyCodeMap = keyCodeMap,
             commandKey = LeftCommand,
             forIds = hasTerminalIds
         )
     }
 
 private fun rightCommandToControl(): List<KarabinerRule> =
-    rightCommandKeyMappings().map {
-        it.toCommandToControlRule(
+    rightCommandKeyCodeMaps().map { keyCodeMap ->
+        commandToControlRuleFor(
+            keyCodeMap = keyCodeMap,
             commandKey = RightCommand,
             forIds = null
         )
     }
 
-private fun leftCommandKeyMappings(): List<KeyMapping> =
+private fun leftCommandKeyCodeMaps(): List<KeyCodeMap> =
     leftCommandTerminalKeys +
         capslockMicroKeys
 
-private fun rightCommandKeyMappings(): List<KeyMapping> =
+private fun rightCommandKeyCodeMaps(): List<KeyCodeMap> =
     rightCommandControlKeys
 
-private val leftCommandTerminalKeys: List<KeyMapping> =
+private val leftCommandTerminalKeys: List<KeyCodeMap> =
     listOf(
-        KeyCode.B to KeyCode.W // backward-kill-word
+        KeyCodeMap(
+            from = KeyCode.B,
+            to = KeyCode.W
+        ) // backward-kill-word
     ) +
         listOf(
             KeyCode.U, // backward-kill-line
             KeyCode.K, // kill-line
             KeyCode.L, // clear
-        ).map { it to it }
+        ).map { it.toKeyCodeMap() }
 
-private val capslockMicroKeys: List<KeyMapping> =
+private val capslockMicroKeys: List<KeyCodeMap> =
     listOf(
-        KeyCode.Slash to KeyCode.Backslash, // comment line, no beeps
+        KeyCodeMap(
+            from = KeyCode.Slash,
+            to = KeyCode.Backslash
+        ), // comment line, no beeps
     ) +
         listOf(
             KeyCode.A, // select all
             KeyCode.S, // save
             KeyCode.D, // duplicate line
             KeyCode.Z, // undo
-        ).map { it to it }
+        ).map { it.toKeyCodeMap() }
 
-private val rightCommandControlKeys: List<KeyMapping> = allLettersKeyCodes().map { it to it }
+private val rightCommandControlKeys: List<KeyCodeMap> = allLettersKeyCodes().map { it.toKeyCodeMap() }
 
 private fun allLettersKeyCodes(): List<KeyCode> =
     ('A'..'Z').toList()
         .map { it.toString() }
         .mapNotNull { it.toKeycode() }
 
-private fun KeyMapping.toCommandToControlRule(
+private fun commandToControlRuleFor(
+    keyCodeMap: KeyCodeMap,
     commandKey: ModifierKeyCode,
     forIds: List<String>?,
 ): KarabinerRule {
     check(commandKey in listOf(LeftCommand, RightCommand))
 
-    return this.let { (fromKey, toKey) ->
+    return keyCodeMap.let { (fromKey, toKey) ->
         karabinerRuleSingle {
             this.fromKey = fromKey
             fromModifiers = FromModifiers(mandatory = listOf(commandKey))
@@ -85,7 +94,7 @@ private fun KeyMapping.toCommandToControlRule(
                     bundleIds = it
                 }
             }
-            this.description = description()
+            description = description()
         }
     }
 }
